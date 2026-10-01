@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "scope": "Existing bundled 20 accurate timing laps and four native telemetry extracts. No claim of exhaustive full-session coverage.",
+  "matchingRule": "Same phase, compound, source-reported start age and fresh-set flag; green status; starts within 60 seconds; each lap within 8% of its driver phase best among bundled laps. Rules do not use the direction of the NOR–PIA difference. Q2 is a separate timing-only context check, not a replication of Q3.",
+  "q3Pairs": [
+    {
+      "phase": "Q3",
+      "lapA": 25,
+      "lapB": 25,
+      "age": 1,
+      "startSeparation": 4.324,
+      "finishDelta": -0.131,
+      "sectorDelta": [
+        -0.09,
+        -0.038,
+        -0.003
+      ],
+      "nativeTracesAvailable": true
+    }
+  ],
+  "q2Pairs": [
+    {
+      "phase": "Q2",
+      "lapA": 13,
+      "lapB": 13,
+      "age": 1,
+      "startSeparation": 41.906,
+      "finishDelta": -0.139,
+      "sectorDelta": [
+        -0.097,
+        0.228,
+        -0.27
+      ],
+      "nativeTracesAvailable": false
+    }
+  ],
+  "traceRule": "Both L22 traces projected onto NOR L25 reference before inspecting 13.6–27.2%; no exact local time gain is inferred. Native sampled minima and throttle brackets only.",
+  "traces": [
+    {
+      "lap": 22,
+      "drivers": [
+        {
+          "driver": 4,
+          "minimumSpeed": 94,
+          "minimumProgress": 0.1788450294667468,
+          "throttleBracket": [
+            0.18894214951382127,
+            0.19020342119261205
+          ],
+          "positionMedianGap": 0.2599999999999909,
+          "positionMaxGap": 1.0600000000000023,
+          "backwardProjections": 0
+        },
+        {
+          "driver": 81,
+          "minimumSpeed": 93,
+          "minimumProgress": 0.17848633981776507,
+          "throttleBracket": [
+            0.18885512805451343,
+            0.19186899542742689
+          ],
+          "positionMedianGap": 0.259999999999998,
+          "positionMaxGap": 1.0599999999999952,
+          "backwardProjections": 0
+        }
+      ]
+    },
+    {
+      "lap": 25,
+      "drivers": [
+        {
+          "driver": 4,
+          "minimumSpeed": 98,
+          "minimumProgress": 0.1787962421717953,
+          "throttleBracket": [
+            0.18706524710210398,
+            0.18998705493907223
+          ],
+          "positionMedianGap": 0.240000000000002,
+          "positionMaxGap": 1.198999999999998,
+          "backwardProjections": 0
+        },
+        {
+          "driver": 81,
+          "minimumSpeed": 93,
+          "minimumProgress": 0.17830110869208968,
+          "throttleBracket": [
+            0.18681347861856082,
+            0.1893527446409301
+          ],
+          "positionMedianGap": 0.24099999999999966,
+          "positionMaxGap": 1.1989999999999998,
+          "backwardProjections": 0
+        }
+      ]
+    }
+  ]
+}

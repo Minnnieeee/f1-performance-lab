@@ -1,0 +1,488 @@
+{
+  "schema": 1,
+  "engineHash": "f79e3d235cb3834767216fd6ddf4e8bcc92a46272305db3a76b39e37a05c5873",
+  "fuelGain": 0.035,
+  "maxExtrapolation": 5,
+  "inputHashes": {
+    "race-austin.json": "1bc231180d04540e385294a1149a6b8946e8f18f4710c2e33e22209d438b746f",
+    "race-demo.json": "d6022247fa423e436d9bd7d7b133aaba755002c04f91e891082c9d2076257b12",
+    "race-monza.json": "c32724456fd6460f8dfff8d1db27ad105369eb29eacf313a76c6126368d6e45f",
+    "race-singapore.json": "d1268168c6feafea52ba961fcb4ea14eb7228bb11e6e17afafcf3887dc1314ad"
+  },
+  "scope": "Four pre-existing race fixtures; only their two designated drivers have full interval histories. Overlapping forecast origins are not independent experiments. Archived records may include retrospective corrections. No tuning or claim of prospective live validation.",
+  "protocol": "At each completed driver lap, freeze the existing engine snapshot. Predict numbered laps +1/+2/+3 in the same recorded stint, using current support gates. Compare with the last three fit-eligible raw lap times averaged without correction. Score only valid non-pit green/green-inferred targets with >=80% interval coverage and <=20% close-traffic exposure. Do not exclude large forecast errors or slow target laps using a future best-lap threshold. Outcome eligibility uses future records solely for scoring. Error = predicted minus actual.",
+  "summary": [
+    {
+      "h": 1,
+      "n": 28,
+      "modelMAE": 0.2708,
+      "modelBias": -0.0002,
+      "baselineMAE": 0.2363,
+      "baselineBias": -0.0321,
+      "eligible": 85
+    },
+    {
+      "h": 2,
+      "n": 23,
+      "modelMAE": 0.3053,
+      "modelBias": 0.0392,
+      "baselineMAE": 0.2385,
+      "baselineBias": -0.0264,
+      "eligible": 79
+    },
+    {
+      "h": 3,
+      "n": 17,
+      "modelMAE": 0.4275,
+      "modelBias": 0.065,
+      "baselineMAE": 0.3239,
+      "baselineBias": -0.0021,
+      "eligible": 76
+    }
+  ],
+  "sessions": [
+    {
+      "session": 9213,
+      "name": "Austin",
+      "drivers": [
+        1,
+        44
+      ],
+      "horizons": [
+        {
+          "h": 1,
+          "origins": 112,
+          "excluded": {
+            "close_traffic_above_20pct": 24,
+            "pit_or_outlap": 4,
+            "missing_target_or_stint_change": 6,
+            "traffic_coverage_below_80pct": 27,
+            "control_affected_or_unknown": 2
+          },
+          "eligible": 49,
+          "withheld": {
+            "no_pre_cutoff_fit": 15,
+            "negative_trend_extrapolation": 11
+          },
+          "scored": 23,
+          "n": 23,
+          "modelMAE": 0.2522,
+          "modelBias": 0.0389,
+          "baselineMAE": 0.2182,
+          "baselineBias": -0.0002
+        },
+        {
+          "h": 2,
+          "origins": 112,
+          "excluded": {
+            "close_traffic_above_20pct": 21,
+            "pit_or_outlap": 4,
+            "missing_target_or_stint_change": 12,
+            "traffic_coverage_below_80pct": 27,
+            "control_affected_or_unknown": 2
+          },
+          "eligible": 46,
+          "withheld": {
+            "no_pre_cutoff_fit": 17,
+            "negative_trend_extrapolation": 10
+          },
+          "scored": 19,
+          "n": 19,
+          "modelMAE": 0.2975,
+          "modelBias": 0.0702,
+          "baselineMAE": 0.2237,
+          "baselineBias": -0.0009
+        },
+        {
+          "h": 3,
+          "origins": 112,
+          "excluded": {
+            "close_traffic_above_20pct": 18,
+            "pit_or_outlap": 4,
+            "missing_target_or_stint_change": 18,
+            "traffic_coverage_below_80pct": 27,
+            "control_affected_or_unknown": 2
+          },
+          "eligible": 43,
+          "withheld": {
+            "no_pre_cutoff_fit": 19,
+            "negative_trend_extrapolation": 9
+          },
+          "scored": 15,
+          "n": 15,
+          "modelMAE": 0.4276,
+          "modelBias": 0.1306,
+          "baselineMAE": 0.3094,
+          "baselineBias": 0.0553
+        }
+      ]
+    },
+    {
+      "session": 9189,
+      "name": "Las Vegas",
+      "drivers": [
+        1,
+        16
+      ],
+      "horizons": [
+        {
+          "h": 1,
+          "origins": 100,
+          "excluded": {
+            "control_affected_or_unknown": 19,
+            "traffic_coverage_below_80pct": 29,
+            "pit_or_outlap": 3,
+            "missing_target_or_stint_change": 5,
+            "close_traffic_above_20pct": 32
+          },
+          "eligible": 12,
+          "withheld": {
+            "no_pre_cutoff_fit": 7,
+            "negative_trend_extrapolation": 5
+          },
+          "scored": 0,
+          "n": 0,
+          "modelMAE": null,
+          "modelBias": null,
+          "baselineMAE": null,
+          "baselineBias": null
+        },
+        {
+          "h": 2,
+          "origins": 100,
+          "excluded": {
+            "control_affected_or_unknown": 16,
+            "traffic_coverage_below_80pct": 29,
+            "pit_or_outlap": 3,
+            "missing_target_or_stint_change": 10,
+            "close_traffic_above_20pct": 32
+          },
+          "eligible": 10,
+          "withheld": {
+            "no_pre_cutoff_fit": 6,
+            "negative_trend_extrapolation": 4
+          },
+          "scored": 0,
+          "n": 0,
+          "modelMAE": null,
+          "modelBias": null,
+          "baselineMAE": null,
+          "baselineBias": null
+        },
+        {
+          "h": 3,
+          "origins": 100,
+          "excluded": {
+            "control_affected_or_unknown": 13,
+            "traffic_coverage_below_80pct": 29,
+            "pit_or_outlap": 3,
+            "missing_target_or_stint_change": 15,
+            "close_traffic_above_20pct": 30
+          },
+          "eligible": 10,
+          "withheld": {
+            "no_pre_cutoff_fit": 7,
+            "negative_trend_extrapolation": 3
+          },
+          "scored": 0,
+          "n": 0,
+          "modelMAE": null,
+          "modelBias": null,
+          "baselineMAE": null,
+          "baselineBias": null
+        }
+      ]
+    },
+    {
+      "session": 9157,
+      "name": "Monza",
+      "drivers": [
+        1,
+        11
+      ],
+      "horizons": [
+        {
+          "h": 1,
+          "origins": 102,
+          "excluded": {
+            "close_traffic_above_20pct": 49,
+            "traffic_coverage_below_80pct": 33,
+            "pit_or_outlap": 2,
+            "missing_target_or_stint_change": 4
+          },
+          "eligible": 14,
+          "withheld": {
+            "no_pre_cutoff_fit": 7,
+            "negative_trend_extrapolation": 2
+          },
+          "scored": 5,
+          "n": 5,
+          "modelMAE": 0.3561,
+          "modelBias": -0.1804,
+          "baselineMAE": 0.3199,
+          "baselineBias": -0.1787
+        },
+        {
+          "h": 2,
+          "origins": 102,
+          "excluded": {
+            "close_traffic_above_20pct": 46,
+            "traffic_coverage_below_80pct": 33,
+            "pit_or_outlap": 2,
+            "missing_target_or_stint_change": 8
+          },
+          "eligible": 13,
+          "withheld": {
+            "no_pre_cutoff_fit": 7,
+            "negative_trend_extrapolation": 2
+          },
+          "scored": 4,
+          "n": 4,
+          "modelMAE": 0.3421,
+          "modelBias": -0.1083,
+          "baselineMAE": 0.3087,
+          "baselineBias": -0.1476
+        },
+        {
+          "h": 3,
+          "origins": 102,
+          "excluded": {
+            "close_traffic_above_20pct": 42,
+            "traffic_coverage_below_80pct": 33,
+            "pit_or_outlap": 2,
+            "missing_target_or_stint_change": 12
+          },
+          "eligible": 13,
+          "withheld": {
+            "no_pre_cutoff_fit": 8,
+            "negative_trend_extrapolation": 3
+          },
+          "scored": 2,
+          "n": 2,
+          "modelMAE": 0.4274,
+          "modelBias": -0.4274,
+          "baselineMAE": 0.4327,
+          "baselineBias": -0.4327
+        }
+      ]
+    },
+    {
+      "session": 9165,
+      "name": "Marina Bay",
+      "drivers": [
+        55,
+        4
+      ],
+      "horizons": [
+        {
+          "h": 1,
+          "origins": 124,
+          "excluded": {
+            "traffic_coverage_below_80pct": 55,
+            "pit_or_outlap": 2,
+            "missing_target_or_stint_change": 4,
+            "control_affected_or_unknown": 9,
+            "close_traffic_above_20pct": 44
+          },
+          "eligible": 10,
+          "withheld": {
+            "no_pre_cutoff_fit": 5,
+            "negative_trend_extrapolation": 4,
+            "age_support": 1
+          },
+          "scored": 0,
+          "n": 0,
+          "modelMAE": null,
+          "modelBias": null,
+          "baselineMAE": null,
+          "baselineBias": null
+        },
+        {
+          "h": 2,
+          "origins": 124,
+          "excluded": {
+            "traffic_coverage_below_80pct": 54,
+            "pit_or_outlap": 2,
+            "missing_target_or_stint_change": 8,
+            "control_affected_or_unknown": 7,
+            "close_traffic_above_20pct": 43
+          },
+          "eligible": 10,
+          "withheld": {
+            "no_pre_cutoff_fit": 6,
+            "age_support": 2,
+            "negative_trend_extrapolation": 2
+          },
+          "scored": 0,
+          "n": 0,
+          "modelMAE": null,
+          "modelBias": null,
+          "baselineMAE": null,
+          "baselineBias": null
+        },
+        {
+          "h": 3,
+          "origins": 124,
+          "excluded": {
+            "traffic_coverage_below_80pct": 53,
+            "pit_or_outlap": 2,
+            "missing_target_or_stint_change": 12,
+            "control_affected_or_unknown": 5,
+            "close_traffic_above_20pct": 42
+          },
+          "eligible": 10,
+          "withheld": {
+            "no_pre_cutoff_fit": 6,
+            "age_support": 3,
+            "negative_trend_extrapolation": 1
+          },
+          "scored": 0,
+          "n": 0,
+          "modelMAE": null,
+          "modelBias": null,
+          "baselineMAE": null,
+          "baselineBias": null
+        }
+      ]
+    }
+  ],
+  "replacements": [
+    {
+      "session": 9213,
+      "driver": 1,
+      "compound": "MEDIUM",
+      "stint": 2,
+      "cutoffLap": 15,
+      "sourceStint": 1,
+      "sourceFit": {
+        "n": 5,
+        "minAge": 5,
+        "maxAge": 14,
+        "slope": -0.0039
+      },
+      "ageZeroSupported": false,
+      "newSetAge": 0,
+      "observed": [
+        {
+          "lap": 18,
+          "age": 1,
+          "prediction": null,
+          "actual": 100.989,
+          "error": null
+        },
+        {
+          "lap": 19,
+          "age": 2,
+          "prediction": null,
+          "actual": 100.809,
+          "error": null
+        },
+        {
+          "lap": 20,
+          "age": 3,
+          "prediction": null,
+          "actual": 100.883,
+          "error": null
+        },
+        {
+          "lap": 21,
+          "age": 4,
+          "prediction": null,
+          "actual": 100.98,
+          "error": null
+        }
+      ],
+      "excluded": {
+        "pit_or_outlap": 1
+      }
+    },
+    {
+      "session": 9213,
+      "driver": 44,
+      "compound": "MEDIUM",
+      "stint": 3,
+      "cutoffLap": 37,
+      "sourceStint": 1,
+      "sourceFit": {
+        "n": 13,
+        "minAge": 6,
+        "maxAge": 18,
+        "slope": 0.0797
+      },
+      "ageZeroSupported": false,
+      "newSetAge": 0,
+      "observed": [
+        {
+          "lap": 40,
+          "age": 1,
+          "prediction": 100.7385,
+          "actual": 99.898,
+          "error": 0.8405
+        },
+        {
+          "lap": 41,
+          "age": 2,
+          "prediction": 100.7832,
+          "actual": 99.856,
+          "error": 0.9272
+        }
+      ],
+      "excluded": {
+        "pit_or_outlap": 1,
+        "close_traffic_above_20pct": 2
+      }
+    },
+    {
+      "session": 9189,
+      "driver": 1,
+      "compound": "HARD",
+      "stint": 3,
+      "cutoffLap": 25,
+      "sourceStint": null,
+      "sourceFit": null,
+      "ageZeroSupported": false,
+      "newSetAge": 0,
+      "observed": [],
+      "excluded": {
+        "pit_or_outlap": 1,
+        "control_affected_or_unknown": 2,
+        "close_traffic_above_20pct": 2
+      }
+    }
+  ],
+  "worstErrors": [
+    {
+      "session": 9213,
+      "driver": 44,
+      "origin": 48,
+      "target": 51,
+      "h": 3,
+      "prediction": 100.7991,
+      "actual": 99.819,
+      "error": 0.9801,
+      "baselineError": 0.5097
+    },
+    {
+      "session": 9157,
+      "driver": 11,
+      "origin": 46,
+      "target": 47,
+      "h": 1,
+      "prediction": 85.521,
+      "actual": 86.476,
+      "error": -0.955,
+      "baselineError": -0.8507
+    },
+    {
+      "session": 9213,
+      "driver": 44,
+      "origin": 47,
+      "target": 50,
+      "h": 3,
+      "prediction": 100.7156,
+      "actual": 99.901,
+      "error": 0.8146,
+      "baselineError": 0.4277
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+"use strict";
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),demo=require('../dist/data/demo.json');
+const source=fs.readFileSync(require.resolve('../dist/app.js'),'utf8'),elements=new Map();
+const document={getElementById(id){if(!elements.has(id))elements.set(id,{style:{},value:'',textContent:'',classList:{toggle(){}}});return elements.get(id);}};
+const c=vm.createContext({document,console,setTimeout,clearTimeout,cancelAnimationFrame(){},fixture:demo});
+const run=s=>vm.runInContext(s,c);
+run(source.slice(0,source.indexOf('document.querySelectorAll(".mode-button").forEach((button) => button.addEventListener')));
+run(`let contextLoads=0;
+stopStreams=updateSessionOptions=updateDriverOptions=updateLapSelectors=updateLabDetails=resetPerformanceAnalysis=buildDistancePerformanceAnalysis=buildPaceRows=saveReplayCache=resetReplayClock=render=()=>{};
+setStatus=()=>{};loadSessionContext=()=>{contextLoads++;};
+loadSessionCatalog=async()=>{state.sessionCatalog=[fixture.session];};
+apiFetch=async endpoint=>endpoint==='drivers'?fixture.drivers:endpoint==='laps'?fixture.laps:fixture.stints;
+fetchLapDataset=async()=>{throw Error('Trace service unavailable');};
+state.selectedMode='replay';state.mode='replay';state.replayYear=2023;`);
+(async()=>{await run('loadReplay({sessionKey:fixture.session.session_key})');assert.equal(run('state.source'),'openf1');assert.equal(run('state.replayError'),null);assert.ok(run('state.laps.length')>0);assert.equal(run('state.telemetry.get(state.selectedA).length'),0);assert.equal(run('contextLoads'),1);assert.match(elements.get('source-label').textContent,/TIMING LOADED/);console.log('Timing-only replay passes: failed traces retain session/laps and automatically load pace context.');})().catch(e=>{console.error(e);process.exitCode=1;});

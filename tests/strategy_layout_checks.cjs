@@ -1,0 +1,83 @@
+const assert=require('node:assert/strict'),{chromium}=require('playwright');
+(async()=>{
+ const browser=await chromium.launch({headless:true,channel:'chrome'}),page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ try{
+  await page.goto(process.env.LAB_URL||'http://127.0.0.1:4173');
+  await page.locator("#load-demo").click();
+  await page.waitForFunction(()=>raceReplay.result&&state.source==='demo');await page.locator('#tab-strategy').click();
+  const original=await page.evaluate(()=>JSON.stringify(raceExportPayload().scenario));
+  const row=id=>page.locator(`.race-ledger [data-scenario="${id}"]`);
+  assert.match(await row('undercut').innerText(),/-0.19[\s\S]*±0.35s[\s\S]*not distinguished/);
+  assert.match(await row('overcut').innerText(),/\+1.88[\s\S]*±0.41s[\s\S]*against A/);
+  assert.match(await row('together').innerText(),/baseline[\s\S]*0.00s/);
+  assert.equal(await row('undercut').locator('.chip-flat').count(),1);
+  assert.match(await page.locator('.race-boundaries').innerText(),/-6 × slope \+0.0315[\s\S]*2 laps \(H=14\).*zero/);
+  assert.match(await page.locator('.race-fuel-strip').first().innerText(),/0.000[\s\S]*forecast withheld[\s\S]*0.035[\s\S]*-0.19s[\s\S]*0.150[\s\S]*-0.88s/);
+  assert.equal(await page.locator('#race-results > details').count(),5);
+  assert.equal(await page.locator('#race-results > details[open]').count(),0);
+  assert.equal(await page.locator('#race-primary-grid input').count(),3);
+  assert.equal(await page.locator('#race-other-grid input,#race-other-grid select').count(),15);
+  assert.equal(await page.locator('#race-methods-section details').count(),0);
+  assert.equal(await page.locator('#race-evidence-section details').count(),0);
+  await page.locator('#race-evidence-section > summary').click();
+  const evidence=await page.locator('#race-evidence-body').innerText();assert.match(evidence,/-10.77/);assert.match(evidence,/-8.70/);assert.match(evidence,/-10.58/);
+  await page.locator('#race-evidence-section > summary').click();
+  assert.equal(await page.locator("#language-toggle").count(), 0);
+  assert.match(await row('undercut').innerText(),/not distinguished/);assert.match(await row('overcut').innerText(),/against A/);
+  assert.equal(await page.evaluate(()=>JSON.stringify(raceExportPayload().scenario)),original,'Layout interactions preserve every exported engine result');
+  await page.evaluate(()=>{window.horizonNode=document.getElementById('strategy-horizon');});
+  await page.locator('#strategy-horizon').fill('0');
+  await page.waitForFunction(()=>raceReplay.result.inputs.horizon===3);
+  assert.equal(await page.locator('#strategy-horizon').inputValue(),'0');
+  assert.match(await page.locator('#strategy-horizon-effective').innerText(),/0 → 3 \(3–30\)/);
+  assert.match(await page.locator('#strategy-delay-effective').innerText(),/3 → 2 \(H−1 limit\)/);
+  assert.equal(await page.evaluate(()=>document.activeElement===window.horizonNode),true,'Rendering must preserve focus and the original input node');
+  await page.locator('#strategy-horizon').press('Tab');
+  assert.equal(await page.locator('#strategy-horizon').inputValue(),'3');assert.equal(await page.locator('#strategy-delay').inputValue(),'2');
+  await page.locator('#strategy-horizon').fill('');await page.waitForFunction(()=>raceReplay.result.inputs.horizon===12);
+  assert.equal(await page.locator('#strategy-horizon').inputValue(),'');assert.match(await page.locator('#strategy-horizon-effective').innerText(),/empty · using 12/);
+  await page.locator('#strategy-horizon').press('Tab');assert.equal(await page.locator('#strategy-horizon').inputValue(),'12');
+  await page.locator('#strategy-delay').fill('3');await page.locator('#strategy-delay').press('Tab');
+  await page.locator('#strategy-horizon').fill('17');await page.waitForFunction(()=>raceReplay.result.inputs.horizon===17);
+  for(const id of ['undercut','overcut'])assert.match(await row(id).innerText(),/withheld[\s\S]*not computed/i);
+  assert.match(await row('undercut').innerText(),/Outside age support/);
+  await page.locator('#strategy-horizon').fill('12');await page.locator('#strategy-horizon').press('Tab');
+  await page.locator('#strategy-fuel-gain').fill('0');await page.waitForFunction(()=>raceReplay.result.inputs.fuelGain===0);
+  for(const id of ['undercut','overcut','together'])assert.match(await row(id).innerText(),/withheld/i);
+  await page.locator('#strategy-fuel-gain').fill('0.035');await page.locator('#strategy-fuel-gain').press('Tab');
+  await page.waitForFunction(()=>raceReplay.result.inputs.fuelGain===.035);
+  await page.locator('#race-assumptions-section > summary').click();
+  await page.locator('#race-warmup-b').fill('99');await page.waitForFunction(()=>raceReplay.result.inputs.warmupB===5);
+  assert.equal(await page.locator('#race-warmup-b').inputValue(),'99');assert.match(await page.locator('#race-warmup-b-effective').innerText(),/99 → 5/);
+  await page.locator('#race-warmup-b').press('Tab');assert.equal(await page.locator('#race-warmup-b').inputValue(),'5');
+  await page.locator('#race-warmup-b').fill('0.6');await page.locator('#race-warmup-b').press('Tab');
+  await page.locator('#race-compound-b').selectOption('MEDIUM');await page.waitForFunction(()=>raceReplay.result.inputs.compoundB==='MEDIUM');
+  assert.ok((await page.locator('.race-ledger').innerText()).length>100,'Compound changes cannot leave an empty result');
+  await page.locator('#race-compound-b').selectOption('HARD');
+  await page.locator('#race-assumptions-section > summary').click();
+  await page.locator('#race-cutoff').selectOption('1');await page.waitForFunction(()=>!!raceReplay.result.reason);
+  assert.equal(await page.locator('.race-ledger').count(),0);
+  assert.equal(await page.locator('#race-scan-section').isVisible(),false);
+  assert.equal(await page.locator('#race-other-grid #strategy-horizon').count(),1);
+  assert.equal(await page.locator('#race-other-grid input,#race-other-grid select').count(),18);
+  await page.locator('#race-assumptions-section > summary').click();assert.equal(await page.locator('#strategy-horizon').isVisible(),true);await page.locator('#race-assumptions-section > summary').click();
+  await page.locator('#race-cutoff').selectOption('32');await page.waitForFunction(()=>!raceReplay.result.reason);
+  // At lap 1 HARD is not yet observed, so restore the baseline replacement choice.
+  await page.locator('#race-assumptions-section > summary').click();await page.locator('#race-compound-b').selectOption('HARD');await page.locator('#race-assumptions-section > summary').click();
+  await page.waitForFunction(()=>raceReplay.result.comparisons.length===2);
+  assert.equal(await page.evaluate(()=>document.getElementById('strategy-horizon')===window.horizonNode),true);
+  const checks=await page.evaluate(()=>{
+   const r=raceReplay.result,s=r.scenarios[0],b=r.scenarios[2];
+   return {constant:singleTerm({...s,finishGap:s.finishGap+1},b),zero:signMargin(raceReplay.snapshot,r.a.driver,r.b.driver,r.inputs,'undercut'),bad:resolveInput('abc',3,30,12,true),decimal:resolveInput('2.8',1,29,3,true),missing:verdict(null,null)};
+  });assert.equal(checks.constant,null);assert.equal(checks.zero.H,14);assert.equal(checks.zero.zero,true);assert.equal(checks.bad.v,12);assert.equal(checks.decimal.v,3);assert.equal(checks.missing.cls,'hold');
+  await page.keyboard.press('Tab');await page.locator('#race-evidence-section > summary').focus();assert.notEqual(await page.locator('#race-evidence-section > summary').evaluate(el=>getComputedStyle(el).outlineStyle),'none');await page.keyboard.press('Enter');assert.equal(await page.locator('#race-evidence-section').getAttribute('open'),'');await page.keyboard.press('Enter');
+  for(const width of [360,1440]){
+   await page.setViewportSize({width,height:1100});
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
+   await page.evaluate(()=>document.getElementById('panel-strategy').scrollIntoView({block:'start'}));
+   await page.screenshot({path:process.env.TEMP+`/f1-strategy-ledger-${width}.png`});
+  }
+  assert.deepEqual(errors,[]);console.log(JSON.stringify({result:'strategy layout and input checks passed',checks,errors}));
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});

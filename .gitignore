@@ -1,0 +1,8 @@
+.env
+.env.*
+__pycache__/
+node_modules/
+.sites-runtime/
+.openai/
+*.zip
+!dist/source.zip

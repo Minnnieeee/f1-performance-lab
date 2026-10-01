@@ -1,0 +1,4980 @@
+{
+  "schema": 1,
+  "asOf": "2026-09-22T06:47:19.650Z",
+  "cancelled": [
+    {
+      "sessionKey": 9079,
+      "year": 2023,
+      "name": "Practice 1",
+      "location": "Imola"
+    },
+    {
+      "sessionKey": 9080,
+      "year": 2023,
+      "name": "Practice 2",
+      "location": "Imola"
+    },
+    {
+      "sessionKey": 9081,
+      "year": 2023,
+      "name": "Practice 3",
+      "location": "Imola"
+    },
+    {
+      "sessionKey": 9082,
+      "year": 2023,
+      "name": "Qualifying",
+      "location": "Imola"
+    },
+    {
+      "sessionKey": 9086,
+      "year": 2023,
+      "name": "Race",
+      "location": "Imola"
+    },
+    {
+      "sessionKey": 11254,
+      "year": 2026,
+      "name": "Practice 1",
+      "location": "Sakhir"
+    },
+    {
+      "sessionKey": 11255,
+      "year": 2026,
+      "name": "Practice 2",
+      "location": "Sakhir"
+    },
+    {
+      "sessionKey": 11256,
+      "year": 2026,
+      "name": "Practice 3",
+      "location": "Sakhir"
+    },
+    {
+      "sessionKey": 11257,
+      "year": 2026,
+      "name": "Qualifying",
+      "location": "Sakhir"
+    },
+    {
+      "sessionKey": 11261,
+      "year": 2026,
+      "name": "Race",
+      "location": "Sakhir"
+    },
+    {
+      "sessionKey": 11262,
+      "year": 2026,
+      "name": "Practice 1",
+      "location": "Jeddah"
+    },
+    {
+      "sessionKey": 11263,
+      "year": 2026,
+      "name": "Practice 2",
+      "location": "Jeddah"
+    },
+    {
+      "sessionKey": 11264,
+      "year": 2026,
+      "name": "Practice 3",
+      "location": "Jeddah"
+    },
+    {
+      "sessionKey": 11265,
+      "year": 2026,
+      "name": "Qualifying",
+      "location": "Jeddah"
+    },
+    {
+      "sessionKey": 11269,
+      "year": 2026,
+      "name": "Race",
+      "location": "Jeddah"
+    }
+  ],
+  "engineHash": "f79e3d235cb3834767216fd6ddf4e8bcc92a46272305db3a76b39e37a05c5873",
+  "inputs": {
+    "horizon": 12,
+    "delay": 3,
+    "warmup": 0.6,
+    "fuelGain": 0.035,
+    "pitLoss": 22,
+    "scFactor": 0.6,
+    "vscFactor": 0.75,
+    "compoundA": null,
+    "compoundB": null,
+    "condition": "observed",
+    "neutralLaps": 2,
+    "paceRange": 0.3,
+    "pitRange": 2,
+    "trafficA": 0,
+    "trafficB": 0,
+    "trafficLaps": 1,
+    "maxExtrapolation": 5
+  },
+  "protocol": "Every completed Race/Sprint session from the 2023–2026 catalog. At the earliest recorded lap completion for each lap number, freeze the full grid and test whether any two distinct drivers pass the existing recent-lap, stint-fit and actual-gap rules and support at least one default stop schedule (0:3,3:0,0:0), H=12, own current compound, recorded track condition. Check all pairs until a supported example is found. This is session/decision availability, not coverage of every driver pair or lap-time accuracy; an available scenario is not a validated strategy recommendation. No support gates are relaxed.",
+  "sessions": [
+    {
+      "sessionKey": 7953,
+      "year": 2023,
+      "name": "Race",
+      "location": "Sakhir",
+      "cutoffs": 57,
+      "available": 50,
+      "control": {
+        "GREEN": 40,
+        "VSC": 1,
+        "GREEN_INFERRED": 15,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 6,
+          "driverA": 1,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 1,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 7779,
+      "year": 2023,
+      "name": "Race",
+      "location": "Jeddah",
+      "cutoffs": 50,
+      "available": 24,
+      "control": {
+        "GREEN": 17,
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 30
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 19,
+        "gap_sync_or_age_support": 2
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 63,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 63,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 63,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 7787,
+      "year": 2023,
+      "name": "Race",
+      "location": "Melbourne",
+      "cutoffs": 58,
+      "available": 0,
+      "control": {
+        "SC": 4,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 46,
+        "RED": 6,
+        "VSC": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 13,
+        "track_status": 6,
+        "age_support": 28,
+        "gap_sync_or_age_support": 11
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9069,
+      "year": 2023,
+      "name": "Sprint",
+      "location": "Baku",
+      "cutoffs": 17,
+      "available": 0,
+      "control": {
+        "GREEN": 1,
+        "VSC": 1,
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 11,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 11,
+        "age_support": 5,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9070,
+      "year": 2023,
+      "name": "Race",
+      "location": "Baku",
+      "cutoffs": 51,
+      "available": 34,
+      "control": {
+        "GREEN": 10,
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 37,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 11,
+        "age_support": 5,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 4,
+          "driverB": 22,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 24,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 1,
+          "driverB": 24,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "SC"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9078,
+      "year": 2023,
+      "name": "Race",
+      "location": "Miami",
+      "cutoffs": 57,
+      "available": 48,
+      "control": {
+        "GREEN": 57
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 3
+      },
+      "examples": [
+        {
+          "lap": 10,
+          "driverA": 81,
+          "driverB": 2,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 81,
+          "driverB": 2,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 12,
+          "driverA": 81,
+          "driverB": 4,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9094,
+      "year": 2023,
+      "name": "Race",
+      "location": "Monaco",
+      "cutoffs": 78,
+      "available": 51,
+      "control": {
+        "GREEN": 78
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 8,
+        "age_support": 9,
+        "gap_sync_or_age_support": 10
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 11,
+          "driverB": 24,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 63,
+          "driverB": 11,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 63,
+          "driverB": 11,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9102,
+      "year": 2023,
+      "name": "Race",
+      "location": "Barcelona",
+      "cutoffs": 66,
+      "available": 58,
+      "control": {
+        "GREEN": 65,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 2,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 1,
+          "driverB": 2,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9110,
+      "year": 2023,
+      "name": "Race",
+      "location": "Montréal",
+      "cutoffs": 70,
+      "available": 46,
+      "control": {
+        "GREEN": 7,
+        "GREEN_INFERRED": 57,
+        "SC": 4,
+        "SC_ENDING": 1,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 12,
+        "age_support": 9,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 44,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 9,
+          "driverA": 44,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 10,
+          "driverA": 44,
+          "driverB": 22,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9117,
+      "year": 2023,
+      "name": "Sprint",
+      "location": "Spielberg",
+      "cutoffs": 24,
+      "available": 0,
+      "control": {
+        "GREEN": 23,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 9,
+        "gap_sync_or_age_support": 9,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9118,
+      "year": 2023,
+      "name": "Race",
+      "location": "Spielberg",
+      "cutoffs": 71,
+      "available": 58,
+      "control": {
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 66,
+        "VSC": 2
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 9,
+        "age_support": 3,
+        "gap_sync_or_age_support": 1
+      },
+      "examples": [
+        {
+          "lap": 13,
+          "driverA": 1,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 14,
+          "driverA": 1,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "VSC"
+        },
+        {
+          "lap": 15,
+          "driverA": 1,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "VSC"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9126,
+      "year": 2023,
+      "name": "Race",
+      "location": "Silverstone",
+      "cutoffs": 52,
+      "available": 22,
+      "control": {
+        "GREEN": 32,
+        "SC": 5,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 13,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 15,
+        "age_support": 5,
+        "gap_sync_or_age_support": 9,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 13,
+          "driverA": 4,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 14,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 15,
+          "driverA": 1,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9133,
+      "year": 2023,
+      "name": "Race",
+      "location": "Budapest",
+      "cutoffs": 70,
+      "available": 55,
+      "control": {
+        "GREEN": 69,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 1,
+        "gap_sync_or_age_support": 7,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 15,
+          "driverA": 4,
+          "driverB": 22,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 16,
+          "driverA": 4,
+          "driverB": 22,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 17,
+          "driverA": 4,
+          "driverB": 22,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9140,
+      "year": 2023,
+      "name": "Sprint",
+      "location": "Spa-Francorchamps",
+      "cutoffs": 11,
+      "available": 0,
+      "control": {
+        "GREEN": 2,
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 5,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 8,
+        "age_support": 1,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9141,
+      "year": 2023,
+      "name": "Race",
+      "location": "Spa-Francorchamps",
+      "cutoffs": 44,
+      "available": 36,
+      "control": {
+        "GREEN": 43,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 1,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 11,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 11,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 11,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9149,
+      "year": 2023,
+      "name": "Race",
+      "location": "Zandvoort",
+      "cutoffs": 72,
+      "available": 28,
+      "control": {
+        "GREEN": 15,
+        "SC": 5,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 42,
+        "RED": 8,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 23,
+        "gap_sync_or_age_support": 5,
+        "track_status": 9
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 11,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 11,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 11,
+          "driverB": 1,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9157,
+      "year": 2023,
+      "name": "Race",
+      "location": "Monza",
+      "cutoffs": 51,
+      "available": 44,
+      "control": {
+        "GREEN": 51
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 55,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 55,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 55,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9165,
+      "year": 2023,
+      "name": "Race",
+      "location": "Marina Bay",
+      "cutoffs": 62,
+      "available": 47,
+      "control": {
+        "GREEN": 19,
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 39,
+        "VSC": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 8,
+        "gap_sync_or_age_support": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 77,
+          "driverB": 24,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 63,
+          "driverB": 77,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 77,
+          "driverB": 24,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9173,
+      "year": 2023,
+      "name": "Race",
+      "location": "Suzuka",
+      "cutoffs": 53,
+      "available": 44,
+      "control": {
+        "SC": 3,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 48,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 8,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 4,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 10,
+          "driverA": 4,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 11,
+          "driverA": 4,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9220,
+      "year": 2023,
+      "name": "Sprint",
+      "location": "Lusail",
+      "cutoffs": 19,
+      "available": 0,
+      "control": {
+        "SC": 7,
+        "SC_ENDING": 3,
+        "GREEN_INFERRED": 8,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 17,
+        "age_support": 1,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9221,
+      "year": 2023,
+      "name": "Race",
+      "location": "Lusail",
+      "cutoffs": 57,
+      "available": 29,
+      "control": {
+        "SC": 3,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 53
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 9,
+        "age_support": 12,
+        "gap_sync_or_age_support": 7
+      },
+      "examples": [
+        {
+          "lap": 20,
+          "driverA": 22,
+          "driverB": 2,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 21,
+          "driverA": 22,
+          "driverB": 2,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 22,
+          "driverA": 22,
+          "driverB": 2,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9212,
+      "year": 2023,
+      "name": "Sprint",
+      "location": "Austin",
+      "cutoffs": 19,
+      "available": 11,
+      "control": {
+        "GREEN": 19
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 4,
+        "age_support": 3,
+        "gap_sync_or_age_support": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 1,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 1,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9213,
+      "year": 2023,
+      "name": "Race",
+      "location": "Austin",
+      "cutoffs": 56,
+      "available": 49,
+      "control": {
+        "GREEN": 55,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 4,
+        "age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 4,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 4,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 4,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9181,
+      "year": 2023,
+      "name": "Race",
+      "location": "Mexico City",
+      "cutoffs": 71,
+      "available": 22,
+      "control": {
+        "GREEN": 4,
+        "GREEN_INFERRED": 63,
+        "SC": 1,
+        "RED": 2,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 11,
+        "age_support": 17,
+        "track_status": 3,
+        "gap_sync_or_age_support": 18
+      },
+      "examples": [
+        {
+          "lap": 12,
+          "driverA": 1,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 13,
+          "driverA": 1,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 14,
+          "driverA": 1,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9204,
+      "year": 2023,
+      "name": "Sprint",
+      "location": "São Paulo",
+      "cutoffs": 24,
+      "available": 0,
+      "control": {
+        "GREEN": 23,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 9,
+        "age_support": 4,
+        "gap_sync_or_age_support": 10,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9205,
+      "year": 2023,
+      "name": "Race",
+      "location": "São Paulo",
+      "cutoffs": 71,
+      "available": 49,
+      "control": {
+        "SC": 1,
+        "RED": 2,
+        "GREEN_INFERRED": 67,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "track_status": 3,
+        "age_support": 9,
+        "gap_sync_or_age_support": 3
+      },
+      "examples": [
+        {
+          "lap": 22,
+          "driverA": 31,
+          "driverB": 24,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 23,
+          "driverA": 31,
+          "driverB": 77,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 24,
+          "driverA": 31,
+          "driverB": 77,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9189,
+      "year": 2023,
+      "name": "Race",
+      "location": "Las Vegas",
+      "cutoffs": 50,
+      "available": 9,
+      "control": {
+        "VSC": 1,
+        "GREEN_INFERRED": 42,
+        "SC": 5,
+        "SC_ENDING": 2
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 10,
+        "age_support": 12,
+        "gap_sync_or_age_support": 19
+      },
+      "examples": [
+        {
+          "lap": 20,
+          "driverA": 27,
+          "driverB": 22,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 21,
+          "driverA": 27,
+          "driverB": 22,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 22,
+          "driverA": 27,
+          "driverB": 22,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9197,
+      "year": 2023,
+      "name": "Race",
+      "location": "Yas Island",
+      "cutoffs": 58,
+      "available": 49,
+      "control": {
+        "GREEN": 58
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 8,
+        "age_support": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 1,
+          "driverB": 20,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 12,
+          "driverA": 1,
+          "driverB": 3,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9472,
+      "year": 2024,
+      "name": "Race",
+      "location": "Sakhir",
+      "cutoffs": 57,
+      "available": 51,
+      "control": {
+        "GREEN": 56,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 6,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 7,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9480,
+      "year": 2024,
+      "name": "Race",
+      "location": "Jeddah",
+      "cutoffs": 50,
+      "available": 8,
+      "control": {
+        "GREEN": 6,
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 40,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 12,
+        "gap_sync_or_age_support": 3,
+        "age_support": 26,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 42,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 43,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 44,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9488,
+      "year": 2024,
+      "name": "Race",
+      "location": "Melbourne",
+      "cutoffs": 58,
+      "available": 42,
+      "control": {
+        "GREEN": 16,
+        "VSC": 1,
+        "GREEN_INFERRED": 40,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 8,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 11,
+          "driverA": 4,
+          "driverB": 23,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 13,
+          "driverA": 4,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 14,
+          "driverA": 4,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9496,
+      "year": 2024,
+      "name": "Race",
+      "location": "Suzuka",
+      "cutoffs": 53,
+      "available": 44,
+      "control": {
+        "RED": 2,
+        "GREEN_INFERRED": 50,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "track_status": 3,
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 10,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 11,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9672,
+      "year": 2024,
+      "name": "Sprint",
+      "location": "Shanghai",
+      "cutoffs": 19,
+      "available": 9,
+      "control": {
+        "GREEN": 18,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "gap_sync_or_age_support": 2,
+        "age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 10,
+          "driverA": 1,
+          "driverB": 44,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 1,
+          "driverB": 44,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 12,
+          "driverA": 1,
+          "driverB": 44,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9673,
+      "year": 2024,
+      "name": "Race",
+      "location": "Shanghai",
+      "cutoffs": 56,
+      "available": 34,
+      "control": {
+        "GREEN": 21,
+        "VSC": 1,
+        "SC": 7,
+        "SC_ENDING": 2,
+        "GREEN_INFERRED": 24,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 15,
+        "gap_sync_or_age_support": 2,
+        "age_support": 4,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 1,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 1,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 11,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9506,
+      "year": 2024,
+      "name": "Sprint",
+      "location": "Miami",
+      "cutoffs": 19,
+      "available": 8,
+      "control": {
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 15,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 8,
+        "age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 11,
+          "driverA": 1,
+          "driverB": 20,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 12,
+          "driverA": 1,
+          "driverB": 20,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 13,
+          "driverA": 1,
+          "driverB": 20,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9507,
+      "year": 2024,
+      "name": "Race",
+      "location": "Miami",
+      "cutoffs": 57,
+      "available": 40,
+      "control": {
+        "GREEN": 22,
+        "GREEN_INFERRED": 30,
+        "SC": 4,
+        "SC_ENDING": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 12
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 1,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 1,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9515,
+      "year": 2024,
+      "name": "Race",
+      "location": "Imola",
+      "cutoffs": 63,
+      "available": 55,
+      "control": {
+        "GREEN": 62,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 1,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9523,
+      "year": 2024,
+      "name": "Race",
+      "location": "Monaco",
+      "cutoffs": 77,
+      "available": 1,
+      "control": {
+        "GREEN_INFERRED": 76,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 66,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 58,
+          "driverA": 1,
+          "driverB": 44,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9531,
+      "year": 2024,
+      "name": "Race",
+      "location": "Montréal",
+      "cutoffs": 70,
+      "available": 1,
+      "control": {
+        "GREEN": 24,
+        "SC": 8,
+        "SC_ENDING": 2,
+        "GREEN_INFERRED": 35,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 44,
+        "gap_sync_or_age_support": 17,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 25,
+          "driverA": 20,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 0,
+          "condition": "SC"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9539,
+      "year": 2024,
+      "name": "Race",
+      "location": "Barcelona",
+      "cutoffs": 66,
+      "available": 57,
+      "control": {
+        "GREEN": 65,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 1,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 1,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9549,
+      "year": 2024,
+      "name": "Sprint",
+      "location": "Spielberg",
+      "cutoffs": 23,
+      "available": 0,
+      "control": {
+        "GREEN": 22,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 13,
+        "gap_sync_or_age_support": 3,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9550,
+      "year": 2024,
+      "name": "Race",
+      "location": "Spielberg",
+      "cutoffs": 71,
+      "available": 64,
+      "control": {
+        "GREEN": 65,
+        "GREEN_INFERRED": 5,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 4,
+        "age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9558,
+      "year": 2024,
+      "name": "Race",
+      "location": "Silverstone",
+      "cutoffs": 52,
+      "available": 26,
+      "control": {
+        "GREEN": 51,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 9,
+        "age_support": 7,
+        "gap_sync_or_age_support": 9,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 63,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 63,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 14,
+          "driverA": 63,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9566,
+      "year": 2024,
+      "name": "Race",
+      "location": "Budapest",
+      "cutoffs": 70,
+      "available": 62,
+      "control": {
+        "GREEN": 69,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 4,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 81,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 81,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9574,
+      "year": 2024,
+      "name": "Race",
+      "location": "Spa-Francorchamps",
+      "cutoffs": 44,
+      "available": 33,
+      "control": {
+        "GREEN": 43,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 8,
+        "age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 44,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 44,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 16,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9582,
+      "year": 2024,
+      "name": "Race",
+      "location": "Zandvoort",
+      "cutoffs": 72,
+      "available": 64,
+      "control": {
+        "GREEN": 71,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 1,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 1,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9590,
+      "year": 2024,
+      "name": "Race",
+      "location": "Monza",
+      "cutoffs": 53,
+      "available": 39,
+      "control": {
+        "GREEN": 52,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 4,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 14,
+          "driverA": 81,
+          "driverB": 43,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 15,
+          "driverA": 81,
+          "driverB": 23,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 16,
+          "driverA": 81,
+          "driverB": 23,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9598,
+      "year": 2024,
+      "name": "Race",
+      "location": "Baku",
+      "cutoffs": 51,
+      "available": 40,
+      "control": {
+        "GREEN": 50,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 5,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 14,
+          "driverB": 22,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 12,
+          "driverA": 11,
+          "driverB": 1,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 13,
+          "driverA": 11,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9606,
+      "year": 2024,
+      "name": "Race",
+      "location": "Marina Bay",
+      "cutoffs": 62,
+      "available": 51,
+      "control": {
+        "GREEN": 61,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 2,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 3,
+          "driverB": 77,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 3,
+          "driverB": 77,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 63,
+          "driverB": 77,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9616,
+      "year": 2024,
+      "name": "Sprint",
+      "location": "Austin",
+      "cutoffs": 19,
+      "available": 0,
+      "control": {
+        "GREEN": 18,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 6,
+        "gap_sync_or_age_support": 6,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9617,
+      "year": 2024,
+      "name": "Race",
+      "location": "Austin",
+      "cutoffs": 56,
+      "available": 38,
+      "control": {
+        "GREEN": 2,
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 50,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 9,
+        "age_support": 5,
+        "gap_sync_or_age_support": 3,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 18,
+          "driverA": 16,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 19,
+          "driverA": 16,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 20,
+          "driverA": 16,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9625,
+      "year": 2024,
+      "name": "Race",
+      "location": "Mexico City",
+      "cutoffs": 71,
+      "available": 40,
+      "control": {
+        "SC": 5,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 64,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 12,
+        "age_support": 10,
+        "gap_sync_or_age_support": 8,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 31,
+          "driverA": 11,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 32,
+          "driverA": 11,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 33,
+          "driverA": 11,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9635,
+      "year": 2024,
+      "name": "Sprint",
+      "location": "São Paulo",
+      "cutoffs": 24,
+      "available": 19,
+      "control": {
+        "GREEN": 21,
+        "VSC": 2,
+        "GREEN_INFERRED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 4,
+        "gap_sync_or_age_support": 1
+      },
+      "examples": [
+        {
+          "lap": 6,
+          "driverA": 1,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 7,
+          "driverA": 81,
+          "driverB": 1,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 81,
+          "driverB": 1,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9636,
+      "year": 2024,
+      "name": "Race",
+      "location": "São Paulo",
+      "cutoffs": 69,
+      "available": 3,
+      "control": {
+        "GREEN": 27,
+        "VSC_ENDING": 1,
+        "GREEN_INFERRED": 27,
+        "SC": 5,
+        "RED": 7,
+        "SC_ENDING": 1,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 12,
+        "age_support": 13,
+        "gap_sync_or_age_support": 33,
+        "track_status": 8
+      },
+      "examples": [
+        {
+          "lap": 27,
+          "driverA": 63,
+          "driverB": 24,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 28,
+          "driverA": 63,
+          "driverB": 30,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "VSC_ENDING"
+        },
+        {
+          "lap": 29,
+          "driverA": 63,
+          "driverB": 30,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9644,
+      "year": 2024,
+      "name": "Race",
+      "location": "Las Vegas",
+      "cutoffs": 50,
+      "available": 33,
+      "control": {
+        "GREEN": 49,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 5,
+        "gap_sync_or_age_support": 6,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 1,
+          "driverB": 20,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 1,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9654,
+      "year": 2024,
+      "name": "Sprint",
+      "location": "Lusail",
+      "cutoffs": 19,
+      "available": 0,
+      "control": {
+        "GREEN": 18,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 4,
+        "age_support": 12,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9655,
+      "year": 2024,
+      "name": "Race",
+      "location": "Lusail",
+      "cutoffs": 57,
+      "available": 0,
+      "control": {
+        "SC": 9,
+        "SC_ENDING": 3,
+        "GREEN_INFERRED": 44,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 19,
+        "age_support": 26,
+        "gap_sync_or_age_support": 11,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9662,
+      "year": 2024,
+      "name": "Race",
+      "location": "Yas Island",
+      "cutoffs": 58,
+      "available": 51,
+      "control": {
+        "GREEN": 1,
+        "VSC": 1,
+        "GREEN_INFERRED": 55,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 4,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 8,
+          "driverA": 55,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 9,
+          "driverA": 4,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9693,
+      "year": 2025,
+      "name": "Race",
+      "location": "Melbourne",
+      "cutoffs": 57,
+      "available": 0,
+      "control": {
+        "SC": 17,
+        "SC_ENDING": 3,
+        "GREEN_INFERRED": 36,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 28,
+        "age_support": 15,
+        "gap_sync_or_age_support": 13,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9993,
+      "year": 2025,
+      "name": "Sprint",
+      "location": "Shanghai",
+      "cutoffs": 19,
+      "available": 0,
+      "control": {
+        "GREEN": 18,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 1,
+        "gap_sync_or_age_support": 10,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9998,
+      "year": 2025,
+      "name": "Race",
+      "location": "Shanghai",
+      "cutoffs": 56,
+      "available": 49,
+      "control": {
+        "GREEN": 55,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 81,
+          "driverB": 5,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 81,
+          "driverB": 5,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 81,
+          "driverB": 87,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 10006,
+      "year": 2025,
+      "name": "Race",
+      "location": "Suzuka",
+      "cutoffs": 53,
+      "available": 35,
+      "control": {
+        "GREEN": 52,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 7,
+        "gap_sync_or_age_support": 3,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 12,
+          "driverA": 1,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 13,
+          "driverA": 1,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 14,
+          "driverA": 1,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 10014,
+      "year": 2025,
+      "name": "Race",
+      "location": "Sakhir",
+      "cutoffs": 57,
+      "available": 43,
+      "control": {
+        "GREEN": 31,
+        "SC": 3,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 21,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 12,
+        "age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 81,
+          "driverB": 23,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 81,
+          "driverB": 23,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 81,
+          "driverB": 23,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 10022,
+      "year": 2025,
+      "name": "Race",
+      "location": "Jeddah",
+      "cutoffs": 50,
+      "available": 33,
+      "control": {
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 46,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 8,
+        "age_support": 7,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 12,
+          "driverA": 1,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 13,
+          "driverA": 1,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 14,
+          "driverA": 1,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 10028,
+      "year": 2025,
+      "name": "Sprint",
+      "location": "Miami Gardens",
+      "cutoffs": 18,
+      "available": 11,
+      "control": {
+        "GREEN": 14,
+        "SC": 3,
+        "SC_ENDING": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 81,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 81,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 81,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 10033,
+      "year": 2025,
+      "name": "Race",
+      "location": "Miami Gardens",
+      "cutoffs": 33,
+      "available": 20,
+      "control": {
+        "GREEN_INFERRED": 30,
+        "VSC": 2,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 3,
+        "age_support": 7,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 37,
+          "driverA": 81,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 38,
+          "driverA": 4,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 39,
+          "driverA": 81,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9987,
+      "year": 2025,
+      "name": "Race",
+      "location": "Imola",
+      "cutoffs": 63,
+      "available": 56,
+      "control": {
+        "GREEN": 28,
+        "VSC": 2,
+        "GREEN_INFERRED": 24,
+        "SC": 7,
+        "SC_ENDING": 1,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 1,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 1,
+          "driverB": 5,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 5,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9979,
+      "year": 2025,
+      "name": "Race",
+      "location": "Monaco",
+      "cutoffs": 78,
+      "available": 61,
+      "control": {
+        "GREEN": 1,
+        "VSC": 2,
+        "GREEN_INFERRED": 74,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 9,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 4,
+          "driverB": 22,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 10,
+          "driverA": 4,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 11,
+          "driverA": 4,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9971,
+      "year": 2025,
+      "name": "Race",
+      "location": "Barcelona",
+      "cutoffs": 66,
+      "available": 44,
+      "control": {
+        "GREEN": 54,
+        "SC": 5,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 5,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 12,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 13,
+          "driverA": 81,
+          "driverB": 87,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 14,
+          "driverA": 81,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 15,
+          "driverA": 81,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9963,
+      "year": 2025,
+      "name": "Race",
+      "location": "Montréal",
+      "cutoffs": 70,
+      "available": 59,
+      "control": {
+        "GREEN": 66,
+        "SC": 3,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 8,
+        "age_support": 1,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 63,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 63,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 63,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9955,
+      "year": 2025,
+      "name": "Race",
+      "location": "Spielberg",
+      "cutoffs": 70,
+      "available": 52,
+      "control": {
+        "SC": 2,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 66,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 9,
+        "age_support": 8,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 18,
+          "driverA": 4,
+          "driverB": 43,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 19,
+          "driverA": 4,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 20,
+          "driverA": 10,
+          "driverB": 87,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9947,
+      "year": 2025,
+      "name": "Race",
+      "location": "Silverstone",
+      "cutoffs": 52,
+      "available": 0,
+      "control": {
+        "GREEN": 1,
+        "VSC": 4,
+        "GREEN_INFERRED": 38,
+        "SC": 6,
+        "SC_ENDING": 2,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 24,
+        "age_support": 15,
+        "gap_sync_or_age_support": 12,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9934,
+      "year": 2025,
+      "name": "Sprint",
+      "location": "Spa-Francorchamps",
+      "cutoffs": 15,
+      "available": 0,
+      "control": {
+        "GREEN": 14,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 8,
+        "age_support": 5,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9939,
+      "year": 2025,
+      "name": "Race",
+      "location": "Spa-Francorchamps",
+      "cutoffs": 44,
+      "available": 3,
+      "control": {
+        "GREEN": 43,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 11,
+        "age_support": 24,
+        "gap_sync_or_age_support": 5,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 10,
+          "driverA": 81,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 81,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 13,
+          "driverA": 81,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9928,
+      "year": 2025,
+      "name": "Race",
+      "location": "Budapest",
+      "cutoffs": 70,
+      "available": 54,
+      "control": {
+        "GREEN": 69,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 9,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 16,
+          "driverA": 16,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 17,
+          "driverA": 16,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 18,
+          "driverA": 16,
+          "driverB": 27,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9920,
+      "year": 2025,
+      "name": "Race",
+      "location": "Zandvoort",
+      "cutoffs": 72,
+      "available": 44,
+      "control": {
+        "GREEN": 22,
+        "SC": 10,
+        "SC_ENDING": 3,
+        "GREEN_INFERRED": 35,
+        "VSC": 1,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 21,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 11,
+          "driverA": 1,
+          "driverB": 87,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 12,
+          "driverA": 1,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 13,
+          "driverA": 1,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9912,
+      "year": 2025,
+      "name": "Race",
+      "location": "Monza",
+      "cutoffs": 53,
+      "available": 37,
+      "control": {
+        "GREEN": 52,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 9,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 1,
+          "driverB": 4,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 81,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 13,
+          "driverA": 81,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9904,
+      "year": 2025,
+      "name": "Race",
+      "location": "Baku",
+      "cutoffs": 51,
+      "available": 22,
+      "control": {
+        "SC": 3,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 46,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 9,
+        "age_support": 17,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 29,
+          "driverA": 30,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 30,
+          "driverA": 30,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 31,
+          "driverA": 12,
+          "driverB": 30,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9896,
+      "year": 2025,
+      "name": "Race",
+      "location": "Marina Bay",
+      "cutoffs": 62,
+      "available": 41,
+      "control": {
+        "GREEN": 61,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "gap_sync_or_age_support": 8,
+        "age_support": 7,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 21,
+          "driverA": 4,
+          "driverB": 43,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 22,
+          "driverA": 43,
+          "driverB": 22,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 23,
+          "driverA": 63,
+          "driverB": 43,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9883,
+      "year": 2025,
+      "name": "Sprint",
+      "location": "Austin",
+      "cutoffs": 19,
+      "available": 3,
+      "control": {
+        "SC": 7,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 10,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 10,
+        "age_support": 3,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 16,
+          "driverA": 55,
+          "driverB": 43,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "SC"
+        },
+        {
+          "lap": 17,
+          "driverA": 1,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 0,
+          "condition": "SC"
+        },
+        {
+          "lap": 18,
+          "driverA": 1,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 0,
+          "condition": "SC"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9888,
+      "year": 2025,
+      "name": "Race",
+      "location": "Austin",
+      "cutoffs": 56,
+      "available": 41,
+      "control": {
+        "GREEN": 6,
+        "VSC": 1,
+        "VSC_ENDING": 1,
+        "GREEN_INFERRED": 47,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 4,
+        "age_support": 5,
+        "gap_sync_or_age_support": 5,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 5,
+          "driverA": 1,
+          "driverB": 16,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 16,
+          "driverA": 16,
+          "driverB": 23,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 17,
+          "driverA": 1,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9877,
+      "year": 2025,
+      "name": "Race",
+      "location": "Mexico City",
+      "cutoffs": 71,
+      "available": 59,
+      "control": {
+        "GREEN": 69,
+        "VSC": 1,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 5,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 12,
+          "driverA": 16,
+          "driverB": 5,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 13,
+          "driverA": 16,
+          "driverB": 5,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 14,
+          "driverA": 16,
+          "driverB": 5,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9864,
+      "year": 2025,
+      "name": "Sprint",
+      "location": "São Paulo",
+      "cutoffs": 24,
+      "available": 0,
+      "control": {
+        "GREEN": 5,
+        "SC": 1,
+        "RED": 17,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 4,
+        "age_support": 1,
+        "gap_sync_or_age_support": 1,
+        "track_status": 18
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 9869,
+      "year": 2025,
+      "name": "Race",
+      "location": "São Paulo",
+      "cutoffs": 71,
+      "available": 52,
+      "control": {
+        "GREEN": 1,
+        "SC": 3,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 63,
+        "VSC": 1,
+        "VSC_ENDING": 1,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 12,
+        "age_support": 4,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 19,
+          "driverA": 31,
+          "driverB": 44,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 20,
+          "driverA": 31,
+          "driverB": 44,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 21,
+          "driverA": 31,
+          "driverB": 44,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9858,
+      "year": 2025,
+      "name": "Race",
+      "location": "Las Vegas",
+      "cutoffs": 50,
+      "available": 24,
+      "control": {
+        "GREEN": 1,
+        "VSC": 2,
+        "GREEN_INFERRED": 46,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 4,
+        "gap_sync_or_age_support": 15,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 22,
+          "driverA": 55,
+          "driverB": 87,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 23,
+          "driverA": 63,
+          "driverB": 55,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 25,
+          "driverA": 1,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9845,
+      "year": 2025,
+      "name": "Sprint",
+      "location": "Lusail",
+      "cutoffs": 19,
+      "available": 10,
+      "control": {
+        "GREEN": 18,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 22,
+          "driverB": 14,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 22,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 22,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9850,
+      "year": 2025,
+      "name": "Race",
+      "location": "Lusail",
+      "cutoffs": 57,
+      "available": 21,
+      "control": {
+        "GREEN": 6,
+        "SC": 3,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 46,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 27,
+        "gap_sync_or_age_support": 3,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 32,
+          "driverA": 1,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 37,
+          "driverA": 4,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 38,
+          "driverA": 4,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 9839,
+      "year": 2025,
+      "name": "Race",
+      "location": "Yas Island",
+      "cutoffs": 58,
+      "available": 49,
+      "control": {
+        "GREEN": 57,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 3,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 1,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 1,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 1,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11234,
+      "year": 2026,
+      "name": "Race",
+      "location": "Melbourne",
+      "cutoffs": 56,
+      "available": 43,
+      "control": {
+        "GREEN": 9,
+        "VSC": 4,
+        "GREEN_INFERRED": 42,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 3,
+        "age_support": 9,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 16,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 16,
+          "driverB": 41,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 16,
+          "driverB": 41,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "VSC"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11240,
+      "year": 2026,
+      "name": "Sprint",
+      "location": "Shanghai",
+      "cutoffs": 19,
+      "available": 0,
+      "control": {
+        "GREEN": 12,
+        "SC": 3,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 2,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 11,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": []
+    },
+    {
+      "sessionKey": 11245,
+      "year": 2026,
+      "name": "Race",
+      "location": "Shanghai",
+      "cutoffs": 56,
+      "available": 28,
+      "control": {
+        "GREEN": 9,
+        "SC": 3,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 42,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 4,
+        "gap_sync_or_age_support": 14,
+        "age_support": 9,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 31,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 43,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "SC"
+        },
+        {
+          "lap": 11,
+          "driverA": 43,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "SC"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11253,
+      "year": 2026,
+      "name": "Race",
+      "location": "Suzuka",
+      "cutoffs": 53,
+      "available": 32,
+      "control": {
+        "GREEN": 21,
+        "SC": 5,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 25,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 12,
+        "age_support": 8,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 81,
+          "driverB": 14,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 81,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 81,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11275,
+      "year": 2026,
+      "name": "Sprint",
+      "location": "Miami Gardens",
+      "cutoffs": 19,
+      "available": 6,
+      "control": {
+        "GREEN": 18,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 6,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 13,
+          "driverA": 1,
+          "driverB": 43,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 14,
+          "driverA": 1,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 15,
+          "driverA": 1,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11280,
+      "year": 2026,
+      "name": "Race",
+      "location": "Miami Gardens",
+      "cutoffs": 57,
+      "available": 30,
+      "control": {
+        "GREEN": 5,
+        "SC": 5,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 45,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 19,
+        "gap_sync_or_age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 18,
+          "driverA": 63,
+          "driverB": 43,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 19,
+          "driverA": 16,
+          "driverB": 63,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 20,
+          "driverA": 16,
+          "driverB": 63,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11286,
+      "year": 2026,
+      "name": "Sprint",
+      "location": "Montréal",
+      "cutoffs": 23,
+      "available": 7,
+      "control": {
+        "GREEN": 22,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 4,
+        "age_support": 8,
+        "gap_sync_or_age_support": 3,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 55,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 41,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 41,
+          "driverB": 55,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11291,
+      "year": 2026,
+      "name": "Race",
+      "location": "Montréal",
+      "cutoffs": 68,
+      "available": 1,
+      "control": {
+        "GREEN": 30,
+        "VSC": 2,
+        "GREEN_INFERRED": 35,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 51,
+        "gap_sync_or_age_support": 8,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 53,
+          "driverA": 12,
+          "driverB": 3,
+          "stopA": 0,
+          "stopB": 0,
+          "condition": "VSC"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11299,
+      "year": 2026,
+      "name": "Race",
+      "location": "Monte Carlo",
+      "cutoffs": 78,
+      "available": 43,
+      "control": {
+        "GREEN": 59,
+        "SC": 7,
+        "SC_ENDING": 1,
+        "RED": 10,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 11,
+        "age_support": 13,
+        "track_status": 11
+      },
+      "examples": [
+        {
+          "lap": 13,
+          "driverA": 12,
+          "driverB": 18,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 14,
+          "driverA": 12,
+          "driverB": 6,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 15,
+          "driverA": 12,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11307,
+      "year": 2026,
+      "name": "Race",
+      "location": "Barcelona",
+      "cutoffs": 66,
+      "available": 57,
+      "control": {
+        "GREEN": 40,
+        "VSC": 3,
+        "GREEN_INFERRED": 22,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 6,
+          "driverA": 63,
+          "driverB": 44,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 7,
+          "driverA": 63,
+          "driverB": 44,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 63,
+          "driverB": 44,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11315,
+      "year": 2026,
+      "name": "Race",
+      "location": "Spielberg",
+      "cutoffs": 71,
+      "available": 60,
+      "control": {
+        "GREEN": 24,
+        "VSC": 2,
+        "GREEN_INFERRED": 44,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "age_support": 3,
+        "gap_sync_or_age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 63,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 63,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 63,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11321,
+      "year": 2026,
+      "name": "Sprint",
+      "location": "Silverstone",
+      "cutoffs": 17,
+      "available": 8,
+      "control": {
+        "GREEN": 16,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 3,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 8,
+          "driverA": 44,
+          "driverB": 11,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 44,
+          "driverB": 11,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 44,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11326,
+      "year": 2026,
+      "name": "Race",
+      "location": "Silverstone",
+      "cutoffs": 52,
+      "available": 43,
+      "control": {
+        "GREEN": 21,
+        "GREEN_INFERRED": 26,
+        "SC": 4,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "age_support": 1,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 16,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 16,
+          "driverB": 63,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 16,
+          "driverB": 44,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11334,
+      "year": 2026,
+      "name": "Race",
+      "location": "Spa-Francorchamps",
+      "cutoffs": 44,
+      "available": 20,
+      "control": {
+        "SC": 3,
+        "SC_ENDING": 1,
+        "GREEN_INFERRED": 39,
+        "VSC": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 10,
+        "age_support": 13,
+        "gap_sync_or_age_support": 1
+      },
+      "examples": [
+        {
+          "lap": 25,
+          "driverA": 44,
+          "driverB": 30,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 26,
+          "driverA": 16,
+          "driverB": 41,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 27,
+          "driverA": 16,
+          "driverB": 3,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11342,
+      "year": 2026,
+      "name": "Race",
+      "location": "Budapest",
+      "cutoffs": 70,
+      "available": 61,
+      "control": {
+        "GREEN": 55,
+        "VSC": 1,
+        "GREEN_INFERRED": 13,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "gap_sync_or_age_support": 1,
+        "age_support": 2,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 9,
+          "driverA": 3,
+          "driverB": 30,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 10,
+          "driverA": 81,
+          "driverB": 3,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 11,
+          "driverA": 81,
+          "driverB": 3,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11348,
+      "year": 2026,
+      "name": "Sprint",
+      "location": "Zandvoort",
+      "cutoffs": 24,
+      "available": 16,
+      "control": {
+        "GREEN": 24
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 3
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 63,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 63,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 9,
+          "driverA": 63,
+          "driverB": 10,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11353,
+      "year": 2026,
+      "name": "Race",
+      "location": "Zandvoort",
+      "cutoffs": 72,
+      "available": 10,
+      "control": {
+        "GREEN": 1,
+        "RED": 53,
+        "VSC": 2,
+        "GREEN_INFERRED": 15,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 7,
+        "track_status": 54,
+        "age_support": 1
+      },
+      "examples": [
+        {
+          "lap": 61,
+          "driverA": 12,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 63,
+          "driverA": 12,
+          "driverB": 81,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 64,
+          "driverA": 12,
+          "driverB": 16,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11361,
+      "year": 2026,
+      "name": "Race",
+      "location": "Monza",
+      "cutoffs": 53,
+      "available": 14,
+      "control": {
+        "GREEN": 2,
+        "RED": 25,
+        "VSC": 1,
+        "GREEN_INFERRED": 24,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 6,
+        "track_status": 26,
+        "age_support": 6,
+        "gap_sync_or_age_support": 1
+      },
+      "examples": [
+        {
+          "lap": 39,
+          "driverA": 12,
+          "driverB": 31,
+          "stopA": 3,
+          "stopB": 0,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 40,
+          "driverA": 12,
+          "driverB": 31,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        },
+        {
+          "lap": 41,
+          "driverA": 12,
+          "driverB": 3,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN_INFERRED"
+        }
+      ]
+    },
+    {
+      "sessionKey": 11369,
+      "year": 2026,
+      "name": "Race",
+      "location": "Madrid",
+      "cutoffs": 57,
+      "available": 23,
+      "control": {
+        "GREEN": 13,
+        "VSC": 1,
+        "GREEN_INFERRED": 42,
+        "FINISHED": 1
+      },
+      "withheld": {
+        "fewer_than_two_recent_fitted_drivers_with_gaps": 5,
+        "age_support": 12,
+        "gap_sync_or_age_support": 16,
+        "track_status": 1
+      },
+      "examples": [
+        {
+          "lap": 7,
+          "driverA": 3,
+          "driverB": 43,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 8,
+          "driverA": 12,
+          "driverB": 3,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "GREEN"
+        },
+        {
+          "lap": 14,
+          "driverA": 1,
+          "driverB": 43,
+          "stopA": 0,
+          "stopB": 3,
+          "condition": "VSC"
+        }
+      ]
+    }
+  ],
+  "inputHashes": {
+    "1141-laps.json": "5aae2f2b225e10478a6511d9882768e6534daf32946ac9d840828330dab0264b",
+    "1141-stints.json": "5b4affc47543646a642248dd90042c9734b2885f68555105c53a7c68f724dd64",
+    "1141-race_control.json": "5bb40e5dc24cd8adac6dd277c609191198cdcb70118d65a6b6e96824eaa82c62",
+    "1141-pit.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "1141-position.json": "1b8e4516269197dc037aac1ab08f7c831f10a38e2b4c927c1ef993a86ff74c50",
+    "1141-intervals.json": "c0fcde9738ef787cf0e762e3e72a2646632608a4a4fdb89f89c5eb18d492dee8",
+    "1142-laps.json": "045cd5ebea3469b6919a192e6f20b2de645fa2f9e354a9a5ef36642edb754874",
+    "1142-stints.json": "f661d17837f36de8c99d4245ca65ab6b04d81059323452eec0b5ee8e70cb4eec",
+    "1142-race_control.json": "5077e9ee1f764f8495740252d9feda8dffcc4782582d2107f0902309f891469d",
+    "1142-pit.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "1142-position.json": "5b110ffc8ea5c452de01a368d4511ea85dc2a21913bcef3f3c0b99c9e2fa3d68",
+    "1142-intervals.json": "b0c54aa0c223e797c1fb462882488bdd33b41940978eb13cb04bdc5e070af926",
+    "1143-laps.json": "e3073afb7b0ad8fc170736a7b43cade1ee55e5f8d8b80657440023014a0ab093",
+    "1143-stints.json": "38e35f52b6180d29b7b9dc0509dc296b8a89bb67725de96239c5904435ee4671",
+    "1143-race_control.json": "7b1a8ea8e4cbb71c1adb4bea31ee644d1f42559a1cc20770f8b2dd3f13410626",
+    "1143-pit.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "1143-position.json": "499b1ef28a9ee12f967e02126d486b815a8b7ac02ab851ef01b218353b4a71d2",
+    "1143-intervals.json": "f6878c9beda509174d82ef3a74b06d2c4420be8d3dd97368aa75edbda621c881",
+    "1207-laps.json": "fbe726adba5a9092fb232330596bad16329cc6fa7f158f5bedb491c069d4847e",
+    "1207-stints.json": "c7bf62883e7e31819eb347467a40e93e2c5b74e30ca669e0d5061548300739d0",
+    "1207-race_control.json": "9050a8e188418837ae873985589dc7c1eba94255af769da8b039fe78e2cf51b6",
+    "1207-pit.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "1207-position.json": "3ac1da56da209cb0317ecb341e5231e6de8c310dbafdea6b53de4bcb47c0c083",
+    "1207-intervals.json": "c431e4621f1a08a7584597c40dd7b9a4c9d83e3292ddf0d4e927ce2732410c7c",
+    "1208-laps.json": "d62283c098b2343548bed8c76d534cb96d36be25f8bccad7aec8c29ca7149698",
+    "1208-stints.json": "2bad5650264d662f95fd3165e63e3f8cab90f02a16b536c49b27e57092f860d8",
+    "1208-race_control.json": "bdc612e4e96e0df67a5927576fd825c07b67a0e10e1194dc9a3a9b357d09cffb",
+    "1208-pit.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "1208-position.json": "e5887d6e7730b2f47f35830bc1abc9bd66299cc9b80cd64637858e80fb315f0f",
+    "1208-intervals.json": "dedeef2847607c39408f6a2e27e07bb47bd10e287f43923716b6a370f8fba1e2",
+    "1210-laps.json": "c025c5461287f1f2015c50ab5ad55384f05a4e7f50e10d5335d4cdd2eb762d05",
+    "1210-stints.json": "1598fe68f62f6e57241e1ba0350034f323a2687ab24893f0a751cd868e0363e5",
+    "1210-race_control.json": "3c7d8ac52112dee9417aaf4868819a86f06843ba3cf0d78f0ec0b28b660010e2",
+    "1210-pit.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "1210-position.json": "0da7b287cdd87320c4d39a0b2c718baf591ae6d1a99431017ff85a03aa81f37f",
+    "1210-intervals.json": "e64008f6bf66769acdba83adf44fd80981d80bbc6bc5ec9ce99dd2324df249e3",
+    "1211-laps.json": "3b883102c719b90130dc5db87d2749d8587ab0af9f04052b0d9073c1a926c559",
+    "1211-stints.json": "6d03e73e9dace0d712df89e6ccf568a3497d071ed9928ad4b50394c297b22eb0",
+    "1211-race_control.json": "965d45ae4cc13be938f4db5f550287af6252ba3bd97f5f0986c4e924eec4c0d5",
+    "1211-pit.json": "abad53fb462e485fcccc3abaf1236cdba8b6eaa367096a6ef9627f157980d3e1",
+    "1211-position.json": "a51bc13133f0386283a073afe33e4ba631848956cf3aa78d72179c8c8fe80f24",
+    "1211-intervals.json": "5fa55022737f045d2cc2a70e7933efaaf736385c894713933fec8c10548ebf38",
+    "1212-laps.json": "139e92d421111fc224f60172184ad2c35e4697ed48eb77249a0878e591a6f2f9",
+    "1212-stints.json": "1bef62d20e7cf69a785c3efe7666fa7e1a2b3f82bcd1af3a7ecc4ae87cfe1283",
+    "1212-race_control.json": "bd7ee2cb9c8ed6274f24b51fd4ce2d63950b3f942c6e086d8231fb2e51b8f8bf",
+    "1212-pit.json": "1ac52412246dc7bf8b48916e5af5cd5c4e3fcb2b3b3c295e5b0423cac0aed3f0",
+    "1212-position.json": "ed68922852e9fee3e819bd69ee4a3c0c2f2f1348b84a479f177c2e4e036f27af",
+    "1212-intervals.json": "11a1d74f4ac34cb40e0240f1ece4296b0afd8716d3b0f0e48e99722501dd1845",
+    "1213-laps.json": "19e71bbfdc6cf4c5ae00f118278ededd4f94653bda09056c06b4bc434d7d5668",
+    "1213-stints.json": "d316bb18149ff5fdd7e1da3749614897709c4f0f63822495ea32b9f2c147f974",
+    "1213-race_control.json": "27efc16a1b8ef47a87ac651de555cee1a75d585478135c6684bdb1578607b9f6",
+    "1213-pit.json": "2c8ad9eddee80fe02f7ddd2981a1ef31fb908f20b193e610e7b8240a13b056b3",
+    "1213-position.json": "846d4ec905f217c96c7b5c77a9eea6fcf7331d42be524d0dae038dd4fce4489a",
+    "1213-intervals.json": "2867656951adb37c3e5be46969fa2e1401a1fdbd376818de5a0bb4578bce0d59",
+    "1214-laps.json": "c7700cd45ab3c8ea7f387fed5bf14c7ce1dd6808dce65521047fc56049be009b",
+    "1214-stints.json": "12474a717effd48e466c06c2e222bfd7f48485913ff3e01128cbc91b2badc643",
+    "1214-race_control.json": "3fb09bda116f8f0c7c7a5a5641761b8ef9c632a49e4adcedc09a708ab723f596",
+    "1214-pit.json": "3540298f86ff562b2465d8a97ec8bdb633feb9283d77219090260a4a1e48003e",
+    "1214-position.json": "808de7f0c07598818e95ff5427caf3435dadf96d85a35839e89f972b49afb121",
+    "1214-intervals.json": "ea63b66f02c994fee2f8cf9ec635782b46435725eb9ccbdf3400397c058169a7",
+    "1215-laps.json": "0f976cb88871f34fbd426797c6eee7f91fee728c553be692186f93817f86e576",
+    "1215-stints.json": "067988022dce7beed3644fa2c4004784528d84639e3088394c299bfb510764e1",
+    "1215-race_control.json": "dbec78e0a0920383accc15c5cf37410c60bedb14eced5657fddf7106a1d6e40e",
+    "1215-pit.json": "ecc592813bad1ee65f86915681b2574924090c71243f4563bf709959d7c0754a",
+    "1215-position.json": "f11a6710c756a88d0ce00eb9df14348611eb9525eb8bae194ad1d42178e0ef7d",
+    "1215-intervals.json": "5eb54959942d6ca3d41cba8ba05c496ab28471aba66711238ef522558942e2a6",
+    "1216-laps.json": "9c519480a3ddb37a85e0863d97f48b7777ee6add69b2a191c22aba18edcdd4b3",
+    "1216-stints.json": "f1ab9ad95c9d376f2b7a8cf82d4e2fc45b7ddcf411b314b9df6b4dbb4d86e2bf",
+    "1216-race_control.json": "74e53d8e308d51a89f9e598e2e3f6bf6769a8b2224f96419e672c9de8e338d84",
+    "1216-pit.json": "0649910e6726f0c75d168ae97a913ad0ee2efc08499a3588216f7ce3c995c6b3",
+    "1216-position.json": "3f35554ebcd586b730e62ae1c325d04f61916c564d145c89e248513facdd5394",
+    "1216-intervals.json": "1c720b1afc00068b129b7c4b597c6b5afc7f2eefd88aa5a86dd9dc277d9b5afa",
+    "1217-laps.json": "7dc504b91c00b37109a802198451c428c7811473e87b5b22bc7b1d89c624062d",
+    "1217-stints.json": "b8e4a619d620afeccb54ca9f701001da4373113ee810e0c565e30c552da6352a",
+    "1217-race_control.json": "7a55588a8852af613c6e585a2170e00d17213ba8ebde03fe1d80634338f79855",
+    "1217-pit.json": "da5b4b79179dc00b56209e104930e500865dd145c578b673767ce51cb37833c1",
+    "1217-position.json": "7af447adf6aff63f6c746c0ec0bdbd38aaecf358d67f89a1f120789367cc8214",
+    "1217-intervals.json": "360cfcb7411e813df48df41d6026e230fc1d2d720185dd8be56547df335992c8",
+    "1218-laps.json": "00d7e8843de7c991f5e1a442a6b070266ca9da763ecadc8e59be0192680a5238",
+    "1218-stints.json": "492093b4f43c7ebc4a4b778bad898fd6c7f9ee77f3354949a3ac50e3d4663de0",
+    "1218-race_control.json": "5c235e021dcc16a3a41fa917256f35ce17d94f4911e23e1d0c238d96b018fa1c",
+    "1218-pit.json": "50283e4e74df0612f4b25cf7fb06b2baac3d742489b36bdbaa157d053c88f688",
+    "1218-position.json": "12395012f2cb2ecaaffc48e01f508715fccd86517a2f7878cec5f97fb1654316",
+    "1218-intervals.json": "7e7fdc3ca9fe803e62b8e799ea26fa95c77a22655e1771d914ccf6d85843e4d5",
+    "1219-laps.json": "1ef72cad3c8b2e102fcd247f792ca0c5cfc257a26104770b56ccd4dd9a98fe5c",
+    "1219-stints.json": "76b1f0976deb7133fdbe02a9306e5eae111e32d726069368faa30db368298bff",
+    "1219-race_control.json": "5fb3b13063d4a33c48a89903f3c760ddc7e23a387a7f8b415e3ed01a66518d7a",
+    "1219-pit.json": "7300662e9dc6f4c8071750869cae62a24f2d8b050f428985b65cac10c03613b0",
+    "1219-position.json": "a1088f8c6c733108259335eb7ce3c0324005a18c5c152bd69062158b17a7d9d8",
+    "1219-intervals.json": "84db808af9155d9c0ce39f186452de1208092ff81ec236f69dcdfc5443751431",
+    "1220-laps.json": "a1f2e74a90c2cb07375e0d09ff5737e5716b95df8c0aabcb57fc0180c0efde8a",
+    "1220-stints.json": "5ec7b9fa2611eaa875aca0f4d7b18ec73f02eb7d572f51049190e499b1f6a50c",
+    "1220-race_control.json": "ce282bc5bf223d17f92dd8f39a084d1bb0bec2bac2a73ff1f9557ae289cbab75",
+    "1220-pit.json": "1ec9862d9cb8fd94ebb6b79a3c29e4e34f5504f01cc52ae6ace2759b701a18fd",
+    "1220-position.json": "96b066ada6150fc41c12d23a79fc3113ccb72322c55074806ea7b37ee657a7e8",
+    "1220-intervals.json": "cc2d0220bb660217c82771d4ecaacd02f7b61c9e277d3ac66995badd984d47a4",
+    "1221-laps.json": "8caa7b4c4f39c44b90637d2d7fabd035354bb8fb526f39f0a70862e33250618b",
+    "1221-stints.json": "0a91e05bafc301b7ca7d6db67a5552c09bb0caacb2b481c255e251c7ea7b77fe",
+    "1221-race_control.json": "a331f16718ef8e825495c6ae114c00a33df1f727bb226a1003addbd6c6c989cd",
+    "1221-pit.json": "930a05fa876cf5e4ac7989f3cebdd88661bc6020ce9940e874c4d33fa7adb3cb",
+    "1221-position.json": "7a811f0ddf9d85f15a3ffd7c4ffd696f3ec87c9503d9e135f8a56b6843cd5ec3",
+    "1221-intervals.json": "96b18aa3d0c45154a0d466402ca69a455d72fb15e935f20e2c24b68938cedf47",
+    "1222-laps.json": "2598ebe9b2d184d4364af3807b6692dd15e437ff1e8da8bafd32f83350a671f6",
+    "1222-stints.json": "0e3d0d7125900cc5c0692a4cfdc77e132369542abf157f3514d63507e74b83a9",
+    "1222-race_control.json": "0e3bf9d86ae68af878e30cde581895ee3b9de7e808f30ac04be89b246d6797f1",
+    "1222-pit.json": "8f0c7d22227bd49859e4efac6ac941f03d6fd3660063ea90ee567d95240958de",
+    "1222-position.json": "100ddf858c814d6fe68861ed6b5bbe603a31219bd249b1099853148f646af312",
+    "1222-intervals.json": "a4f8c1758f96407964a9ff79cbea9dbd05a06987f7978abef266f5120c2070ad",
+    "1223-laps.json": "6d349963f6dbcdb820715760dc3971c12fd1215d292c7de914c32d62c76d7422",
+    "1223-stints.json": "cdb8f068c32332aac73cee9c6369a63d952e933713469f47c4d4b03f26fb9644",
+    "1223-race_control.json": "9d26982991a97214dc316dd0cbf4a74a7628b6c413742dcb508b83a2d49574fc",
+    "1223-pit.json": "b32dcfa2a325c5531b931e639686c72054ccd52b41f774b56c613ebc7940c4c3",
+    "1223-position.json": "f2314faa6d830f51672ba22915a063330a8a524851421f57cc8b42d82c17f569",
+    "1223-intervals.json": "439eb1b54caeb8e5a14056b99e1b56ed248286b7da31b8797465a9ae9eede618",
+    "1224-laps.json": "fef59d16aa796aee74c64c70c4294129d0761f17bd043f0d1e493e6474308099",
+    "1224-stints.json": "8434071ab53a05f6044c95f26ccadab5a543ea846b56ffd92da699c5c1d85013",
+    "1224-race_control.json": "1045fa4d4b4dde640c55169bff75e9fe7e25fd4b41279a85eb28f01adaaff89f",
+    "1224-pit.json": "2535efd118a1ae8419b51e4ae0fa81ea22eaf5f93acd3ff1997f233e4ad3ba0a",
+    "1224-position.json": "a836ce7ab0223af836e09c965df20d0dd5744ee94e675be71f0188694b9de774",
+    "1224-intervals.json": "25832d20d0934e18373042856ad5989ddee1482f2c8e9f33617e66bae77853ca",
+    "1225-laps.json": "6c72e74c833c73047b2360b50ab03441553b24dde9260ee71dd55feacb0bf07e",
+    "1225-stints.json": "9baed8536aefc41ae61478a34196426a0a3a71c307dc8e0937e0b82d997e7c54",
+    "1225-race_control.json": "0f23d0e3820f659405a8cba517e8f9e9552ab1dc25088276121462e27a0a1bbd",
+    "1225-pit.json": "e3ad3ebed2f1a6265740d78b2273f20ab362754d8de3ce6399e614390ad1ccaa",
+    "1225-position.json": "ca10fbc4a88195ac087225e9fc0dce1bbbd7af2cdd9bd3f8d63238f912727fe9",
+    "1225-intervals.json": "7f194b8062a21d32dc08010ca9abdbd662d66bed3a69acf5aa5048dfa4a644fb",
+    "1226-laps.json": "cb0da12691e03f595f71318037124fd83461b4f84aa8f73d0a58134ee1c7f6fb",
+    "1226-stints.json": "b8d89818a6958ef9d90406fbe7531cdb9c28d5ec2e09306abc2582408c53880a",
+    "1226-race_control.json": "607b9e15c8de774e339a4360d49be91307ece74575ae195f9cee3775be1c3c12",
+    "1226-pit.json": "339ca514708cef08bbe9d9226ee119a5483c70a085b364492550ca30c57dd24e",
+    "1226-position.json": "ebf8107493ab5c7ee10c52746f9b6712eb7786c170b20069c674e889a9089daa",
+    "1226-intervals.json": "a922edbaf0e6a524bae8c9ef984e40c2eae6236666d6b96795fc3d7264c79fbb",
+    "1229-laps.json": "31481b48f21534e3fc08528163de6742aae08ff3d3b05b320c859e659a004547",
+    "1229-stints.json": "dc5fbd335bc7658c1be13a229e0782b485c868c6d60f626f952e3c58d8aec9da",
+    "1229-race_control.json": "d21619e82eb1e39ea9bf880293570f53ddad7938384fafe92cf35e53b701d2fa",
+    "1229-pit.json": "847307ecede351133855b69603aae8f0e485b717299e9ca9d93c89cbddd264ab",
+    "1229-position.json": "8cc70511f33b71bacbe8a76d7b6072eddb8d3fb25af52d3542fa1fa6141bdbf4",
+    "1229-intervals.json": "a159d8b1d5e291ddb6cf842a738007f8cf8bb51c9c90f992814c95536e6e1c67",
+    "1230-laps.json": "49a79a68bc2165483e1fe7bd1aac8fd2cd56b29e99cc7be926e6f7d57486d93b",
+    "1230-stints.json": "da38d5a37ffc2731f74749ab24c709992711b79feab9246e8fcd22dbba81fa44",
+    "1230-race_control.json": "947c032525f36b368f8a2cd43f6e4c2e55cd6020563f3881f285aeca1e7e1690",
+    "1230-pit.json": "693617b84fe2fdb0d2279918def9c0907085beded260c95094074ef12364f1a4",
+    "1230-position.json": "ca1d5ae2b7dd1d530a4db236a8ec0c56aefa68e829dd756c97b8637768fa3174",
+    "1230-intervals.json": "b42aa3cb864c50de66a643aff203e8a99f498ebf8cb94ae384687530e4424604",
+    "1231-laps.json": "415e64bcc9545be5eb8ac8be1952fb582018a0c71a6fcc96ad56362ff98177c3",
+    "1231-stints.json": "dd81829ca45a8973a65b499e0f2bb20416bf0ac3f98e41ac87820273107975d3",
+    "1231-race_control.json": "0e1849e6b8ddf28db36e7d8469313ff31af5b47807bd76c3efbb7f97e34e5b84",
+    "1231-pit.json": "0ac5b5206afefee187fe8ac97c477a149d1c390d532dcf79862734d301215b00",
+    "1231-position.json": "985651ab254e8d16394b5772129bf581bc9e2b1affdfdfb8f2f2074a7f3ee190",
+    "1231-intervals.json": "ac3bd7f3948146b263ad78385f02cc2e84bb29300643429dff9c2733bec867c4",
+    "1232-laps.json": "335a8536027bd27a33b0059401268293bcb1f69e89e5ee695420a7c4db8848e1",
+    "1232-stints.json": "6a8820fdfa35805dd00c8ad90a8067f7ca7c54cedbdc343ec45693366084b8c1",
+    "1232-race_control.json": "5e23a10fc3f36134fd2016d17774f5e2a1a07dcb847955b1d9cba4fbb102ece4",
+    "1232-pit.json": "eeeaa9cc8fdf4f14b12c6ed4aa065489b69c841e93f77c52a92b81eccfa6700a",
+    "1232-position.json": "b562c14f665d5a62058507358813403c3916a3aa353cfb1c5057e41f384f5740",
+    "1232-intervals.json": "b0ac9ec5b1ec1f7e9e739086711f2d4c1de0e2d490245173af95fb9a5a743021",
+    "1233-laps.json": "fa624bd7131008bd1a26f811b377c4bf832854580f406841a89b7f0c09549c19",
+    "1233-stints.json": "f72dbc1ca3fa11bd049bb59efb0361ac568fe3888ca0ca0b5a12c62e3cf23b7a",
+    "1233-race_control.json": "bb0cf0b9296a5628d53eeb56a29371af66fdb125b1348e56af70e50199360eab",
+    "1233-pit.json": "e77e07d544ea38b98b9a3b584dabd5574c0c6bdc91014e82d415f6114d53b08b",
+    "1233-position.json": "fb7dc1ccb077aa7a527419fe51093a9eeec9f525a07dad344aaa4e9a4ec5a78a",
+    "1233-intervals.json": "4464ec076a3757d9408a4664800d8e77ec651c21164a5510b81b8629e414f891",
+    "1234-laps.json": "a6ad072b2a8c81a07b7e3f07612603d13a74f03deb58dc53dbdabee85d8e9d44",
+    "1234-stints.json": "098757e1952e1e5f00664d3b9e918d418574b6037b0c8a72cdf46597b43f3618",
+    "1234-race_control.json": "747b874bf1e8a4928d97cd5de464cdcdbbc6d26da42d2e05d579f59437585500",
+    "1234-pit.json": "63a9e34eb7dd06669f6810cedd68fc1632b491489ac66fb49694bfc8d1816da6",
+    "1234-position.json": "85e1a9924e2a05082ed2a685b688b6bcdea8508c4c5d08b6fcafe4edc221b002",
+    "1234-intervals.json": "9b3f0cb4a03d58539be5059b5d2741215e49696f431694106c295d3b84dea983",
+    "1235-laps.json": "b50272262f4d47b40f43bd9bce4837065d8cb7ad791a032e8b16078aa0afab26",
+    "1235-stints.json": "55c369b31c862fa6769ca6cfd3f8a372e393178140c82dc2f149d5739828fe8e",
+    "1235-race_control.json": "ae3f8ec31874182c2b0699ae697ad38a71dcbb9abdc4cbb32f17a8429a6247e8",
+    "1235-pit.json": "0ad0c8f427b36f83be43e8697ebf58ef4d176b59937607653c6ad365a42ac3c3",
+    "1235-position.json": "7eda1a386562c38ddfe234bf7ab5b8645e3ded75274b09e40836466f57e4292c",
+    "1235-intervals.json": "77c7c6a5ca363425fdd3551f20bd37364cff1be393122a29442cc58e770b4b7e",
+    "1236-laps.json": "b645cf55525bb9440671c21101b9247d4bc46ca32c4cfd5ac35d56dbf0bdaafe",
+    "1236-stints.json": "e60d76386655d0eedea0bc6aa04190f89f872958800d9a8e26822626fdaf85db",
+    "1236-race_control.json": "5a195e9aae8535dcabf3d5f943b2fbb300c9699084030192aca62d02b77fe938",
+    "1236-pit.json": "05a8cc1b0a5e1e16a15ade787554d414e93fe98c2c046d4c8ad43bd45b247805",
+    "1236-position.json": "210c33d57d81df8cf5022bc0a8945f73e862d9559784d1f4e41f6b378e2989c9",
+    "1236-intervals.json": "cfe92db6b9d0c479ad3c4b2d1b19c3ac4e227ea3de28f8d1c4e2f5e5645662d2",
+    "1237-laps.json": "d5018c2f99c87121794dc27a77cb0c3ed709248681ac32fae407b59f6dc58bbc",
+    "1237-stints.json": "8f9f5137d91dca9404770abd299b0aeb124f352ff20faa0e78e2f7aef0f706d3",
+    "1237-race_control.json": "42f008b55530864840fc24dde915b1902c936e2cf4ae207b4b7d7bfcee554dca",
+    "1237-pit.json": "303586d8eb50ef85caf11a4c37a3b045397be732b4a10dc4f255f215f0f11360",
+    "1237-position.json": "5a07d1f309b47b40696d30b9fb00b59b994148ae32eacbd086ca10e977899862",
+    "1237-intervals.json": "ba8c3b2e6891cacd94515001fd031bb6186114633600df44ebe8ca983c4348da",
+    "1238-laps.json": "dc63c010d44df9acf11ab63d8bb03186200c8a642af95721c5ed2cca7ace41ed",
+    "1238-stints.json": "5ce4e091f33fa5a459cd5f18a8c7ae5c51111b1e6f4feb2a2218710ed1f27d98",
+    "1238-race_control.json": "3d965a98aee23db2f24cf0be4291d2bf5f65658d052ac22692d00eaa21e12385",
+    "1238-pit.json": "bc9e951a1c34ccac1b230e1703ecaebe079c80f41d163200f6849d2bb872bff2",
+    "1238-position.json": "fe1fd723f618a1b033f749c34a805fe286883067ec95051149a65a1b4233a972",
+    "1238-intervals.json": "98785e7055278fccc15e4ddc4ac8044261d6955a878313b310183d3941ac129e",
+    "1239-laps.json": "8e6276c91090658e15fc57308cda152ef95483ad79d1050d3e41da9742ffadc7",
+    "1239-stints.json": "16e5655b608d5f9e03837d5cbfd5d2c3bd41459be6ce74d80f240f906d4a2087",
+    "1239-race_control.json": "4e8f8e93f16ba19a138b28e5cf523674f84c66fbb68e5d43a1e7cc35ca3ee0ff",
+    "1239-pit.json": "b633eaa41b79d2620cdf8c320570942fe298bb12e1b389a679260d40b9bcc832",
+    "1239-position.json": "c96d42a40fbcc05e4543c8a46b27860b1713a5499475640d0a95d262c8b89d2c",
+    "1239-intervals.json": "db9a71931de37d4ad61a65ab7ae69d023de2129542f832194a1773c7262cc21e",
+    "1240-laps.json": "fa4344bfc543683329ebc9d63ca058a7b7b7e87f32c74b9a872f7d3f05e5e642",
+    "1240-stints.json": "bfeef2b81baee9b0f308fd3766d5be4b1b7cbbcc7cdb35c62d51fcaad3c25a8e",
+    "1240-race_control.json": "62f38816b014aa3a446b883a5302e2ee049ecebe2b50fe33ed13c62f70458fc8",
+    "1240-pit.json": "f6642470d1a6602a1c209291f17d77e04fa2ea5b4e4d2871f07f57947364b858",
+    "1240-position.json": "4cf10968ae046d34a209918be74755af88c9f18623ff189af5cbe07d309f5063",
+    "1240-intervals.json": "74f199317c0ef44f387602ed06b3731affe5d509a0fdb8a710ca39aff2016eea",
+    "1241-laps.json": "8de0ca15f2d373f633e1aa2bd31bed5c2aa55bb6a439e93d71da9e9d5a04a458",
+    "1241-stints.json": "762f24098206329cd0627db2ec11d72a378e6ded8a71d93769766491e7c7c880",
+    "1241-race_control.json": "328f14d374d690b371a2f0edec961655416f472d10663f6696dd0f3c8aed917a",
+    "1241-pit.json": "2109af018edc3b6be67735b76487dc06510e18dbfa3d9f2c9f352877bf4f3d91",
+    "1241-position.json": "c5010baf83883f29e4662f52200b18feef8b960b6019ae38ac8e6bd7b779477a",
+    "1241-intervals.json": "124240a4a3055fb0e019d1b701c6b5804c75944c82e9b9d0c3c3a4c4b21dd1a0",
+    "1242-laps.json": "59b7b305e247c558a084a9ab06aa185b26baf27e937030ae467f8079c7ccce90",
+    "1242-stints.json": "7bf30574f0c4b73057c0b272fe759168c0b4d035fea026084301774dbd2c6ada",
+    "1242-race_control.json": "baa5b4357641cf80a249c2d5bab327f36235a04b9a6a96272803a366aefb0109",
+    "1242-pit.json": "4abd7d1aa4b9c2ac765b3fbf99421c4709eaf2d97b44f157da3fc6f00f7dbe00",
+    "1242-position.json": "3ece10f9157895586c4722de5a40b6ea0426d0f4e4818859c3ada155388d4f42",
+    "1242-intervals.json": "a0a8603343e15e7e90bdee640ece3b33b8cb2e657ab86ed29b12193d948f1486",
+    "1243-laps.json": "f34a40be1c44c917a9ea1880eeb48dbf9a5757d60e7aad4fe6de228a1d0776ba",
+    "1243-stints.json": "e0169bbb1c713362912ac1ed7c18410af28a1175c3ba7eb20a99e22d68481cd3",
+    "1243-race_control.json": "61db4fdfcb3cbee7a60f953a927effc52e7b96054bb395b4960da22e38c87bb7",
+    "1243-pit.json": "ce0b3004f06cc9a9996ad6620713e4fa05ac0685e90f850edea62da350c14703",
+    "1243-position.json": "af476d9a1bfe885778ee8c3fdc1b9a95c8bd3241c93b6da92bc3e1b2f6d4b7b0",
+    "1243-intervals.json": "e68bc0673e98952a2f243c93a6bd5bc35b8df3f7ebb897754d633eb2eb601f24",
+    "1244-laps.json": "475c1092d166808bc61947dfb58cde0cf297782907f0aca41a0193b92588dae6",
+    "1244-stints.json": "6e1a80a11afccb71e91361c25738bcfb82fcb570745c4ac7a02526f8e22ac2c6",
+    "1244-race_control.json": "61304b6ae9ee21d1bc118bc7685478a1bf0a1655c732f0b38af7708531b9d470",
+    "1244-pit.json": "3b6ec24cd1a210893fd34866e7234b0e5a24b40854b822ce832b2953a6ac5c55",
+    "1244-position.json": "d7fb4bbb783c4d2a4256d7dc08700316f87edeee5a54753af46e18ef298f3d40",
+    "1244-intervals.json": "a630e339d6dee8dedf1393cae6f11da460e575b5118f74fc0160cc30bf30784d",
+    "1245-laps.json": "6f07e8211739b7c0afed88f05458a9d51990168471c032cda28f376c2bc69c4b",
+    "1245-stints.json": "6e69b1d9517ba8ce7f5b8e2cfb89a425654facc97b7f6b77640782d276020214",
+    "1245-race_control.json": "a2208369ed8cdea56bdc9d496bc10a65e5dabb55e44257f57b70e5383c6832c4",
+    "1245-pit.json": "4794c856f9c6492dfd013ce607f8c2557e7822f20a45b241d55c3948d38c1ab1",
+    "1245-position.json": "103273d92d95f1206140e97c4204f28558d64b9c48fac501a4e75c2eab3ea6e6",
+    "1245-intervals.json": "60d9638a4c44835d63c6efed0498f43151bf62e25231359b7a2e22b4ae9da40b",
+    "1246-laps.json": "9a221485684a16c73e6967f1459b56de59bb239c793be1ae0f074e31b9814cae",
+    "1246-stints.json": "fbac0d8530710cda8839c9d39f5a1987a930d68fcd2f565553f9c1579aa6414b",
+    "1246-race_control.json": "08523248279191622d0fa4fd278f69f159b9311cae222febdf5bfdc115802ca2",
+    "1246-pit.json": "ebaadf48144322634d287bfaa2ea51f8ee7a5e1a339ce34a7c3468cd7c294b43",
+    "1246-position.json": "ac2bd02590e9276e75056028c444fbdebe3f90e3ab687de012111fa134c30f1e",
+    "1246-intervals.json": "d8cbcc03c946299628a11d2af6febf9b5416dea112c10dea1e1b488751239582",
+    "1247-laps.json": "0a2459e53994ea492d70489fe14e5b7c00e962c887c592046a335f616abf26f9",
+    "1247-stints.json": "d18442e838348f311062baa52319d7c9965d02c6dfd13ba839786dbc551dbbca",
+    "1247-race_control.json": "ae642645c32958450f377d78ef3328ed5e8ed217b8625d447f2b9f31f5922003",
+    "1247-pit.json": "fdb2d5cc00f541860ae06a4d36db5969223f80ea1313168d61b4bc556949db7c",
+    "1247-position.json": "0d22c77c97298b0b7ab44c0768c661d4750377261c3e81f7f5e5fcf42c1589ba",
+    "1247-intervals.json": "7fdf43ed847aa9e3878c303e690981c3885cd16537ff5c5a36ce5bd461f7cf09",
+    "1248-laps.json": "1eef1aa065dc74faeab15526f476cc62f1c2a5af144180c7f5f1ff709e0f0d67",
+    "1248-stints.json": "644fa7de215f613522152c24e2098a419e3b673ab5cc682a2f2882a09ed0ce54",
+    "1248-race_control.json": "edf28a9377248696d7e01c9729b81db3da4a45a35dfb3f1f45a9f2be7f651a92",
+    "1248-pit.json": "b1da02544fcf68c5a1aa8140859ab0d2d925f54872b4f24ff497d570deac4658",
+    "1248-position.json": "d45243139b8d9f8e84eaf0b42f3a40f94416f832d5a2b42cfe59da226367ed2b",
+    "1248-intervals.json": "1f45a59d95b20d9ba4ae65c4a0c5780c1a757a31d87fdd023e826d6260d0c4ac",
+    "1249-laps.json": "8a190a493fbf76a15bfc34a1f05567dede0f605879ee8ae021c1d2e50b59e6ea",
+    "1249-stints.json": "fa0a28c59a5c770ab3f946ff00a107da081486725d459bb51800480e7008da22",
+    "1249-race_control.json": "11dea1f08083c14ec677eb2963edccbaeb21ebee18a93f406832ce2a2bd8fef7",
+    "1249-pit.json": "8438c41f693ce6c0c55653aef4621a1c05dd50b150fc80248a74fdd2a9aaee89",
+    "1249-position.json": "9cb902f5854e6522358f19228122f47dacc50026f84580d572d728cf0d0a709d",
+    "1249-intervals.json": "080c82b5112bbda526dac9b0996740d8834050613c31e61038e3a040cedcea81",
+    "1250-laps.json": "1f5af1e830c7d3809709b038579ede175f651630a5644a5fb2eddbb62c80fab1",
+    "1250-stints.json": "e74fb1a485e18a3efbb41cb309f834c0f30f6e021e675b0d1d79e69925e012f3",
+    "1250-race_control.json": "00ad7d7927d001142ae785441f579745c63c83d874b68a9e9ac36bb93ddc2c3f",
+    "1250-pit.json": "21396124eb4dcf1b2af53a606c29ea5e0b2a6f82e623ae42bd5699ef6dfffabd",
+    "1250-position.json": "58b44b2dfa099cca4d19c2fd8467e896ce3ea84edc3a203b702d744018a9094c",
+    "1250-intervals.json": "d44286e4929c297c7f7eebee063c25e4232165c3ca3be12e248b6baff1d61c97",
+    "1251-laps.json": "2799de3cff1c30becc5502d3e029fcf5f6b49ba380146aea2a75ea7f9f425be9",
+    "1251-stints.json": "466fb1d094dae22def9c408466fa9dbfecb0affd064c1e0487c59805acea2fb0",
+    "1251-race_control.json": "b3053e63a986b38ed9fb0a0918aa9771a0e155e5d3292be96373b039a4792e0e",
+    "1251-pit.json": "3c8f9c73b23047ac6d01f6ef3c71df3d9b6953e0c698acfa77896abc434ef7ac",
+    "1251-position.json": "1a07aa7910a1523cd5078ede3561032cbcbb86cc380e975508751cdee779d77a",
+    "1251-intervals.json": "49182260769f965d800af23d15e0808eaed9a38c1c561e48ee3eea263faeb70b",
+    "1252-laps.json": "0dd2f720ed6d7f1e5b4137dc719b4a65991314f005f0416cea5b6fa6ec8a560b",
+    "1252-stints.json": "52aacc4c29b37287bf7c1f17efd8a78a4984efffe929f3bc3db148c9d0838534",
+    "1252-race_control.json": "f9a869d81c3507827888d92797cace9ac00785656c7e279dd265873dd68065c3",
+    "1252-pit.json": "d1537013a3d6fe5d2beb5697bcdbbcb1dae60d5c486d13cbca391ef3546bfdbb",
+    "1252-position.json": "d17a1b1dcbc0874dd981f9a96ddf684442b3afb495af10a7e9a48edeae290477",
+    "1252-intervals.json": "353f978b166ddf12eeecee1681ee14456bed3f6bf48eed223d80b32ea0338e3d",
+    "1254-laps.json": "54c1fc627fff121b06e2652c830549691c178c382fb22105d34b097bacc7f737",
+    "1254-stints.json": "a2873bc84e9ef025eeac17251191757712a2e3cf19827f1061d613b167ab6586",
+    "1254-race_control.json": "f4246ad3017e065363128f9d3ccf3d1306f30cfef576be7976e9bad5d511c6ca",
+    "1254-pit.json": "f76d722f4dc2510e4b39960876bb432e2fc6a1d765e8f3adc110bec18a23620b",
+    "1254-position.json": "a7160adfcae59f453f2f4ff174520c6c5c9c316071fe032a5a0d359ad2d090ea",
+    "1254-intervals.json": "1b79f73d7821f3cb47f0cf2913a1fe46a01fc645fbebfc4475ac284a3c7eb9d2",
+    "1255-laps.json": "70e452f432019efadd1b8010ac3434d900b25170f0c5c48b8dcc9144796bfab4",
+    "1255-stints.json": "a8be4d6faccd22f102bcdeac28acf15f12516b4f70fe8823ad0c9685a1c4f604",
+    "1255-race_control.json": "d1483cfd9a2a6bdb7d3f4d5cbc8e45ac131e58ec34cb1eb964220b0dfdd9e68e",
+    "1255-pit.json": "8cb0369a285c6e60df87450b9dcea0184f8001110551413566698e846802abc1",
+    "1255-position.json": "e00c4c038c60b5d1719b184f2948bfd95f539cc1d6a239f5258c0fab220224df",
+    "1255-intervals.json": "5fa42bc897584f9e067a944bbb9af5d48626c74b1d7b451300f27e2a0994d7e0",
+    "1256-laps.json": "f33ab357f5e3dd370c4fbe56ca26fe8e60c7a5ae49acbbfe7f727b08f33729d9",
+    "1256-stints.json": "01a9ca415ac0c36cd85878fa77d2de86ca9eaddb359dde6481d4afbaabb22283",
+    "1256-race_control.json": "5499bba3daf544768757deba0a38102eb9fcb5dd06391e21080a05894a19b9c1",
+    "1256-pit.json": "b6878e012cadd7f32a481b169456540431d7ad04d48e49b8a10c71a35f08ada7",
+    "1256-position.json": "7c90a3252cb1920375f63842884a951a96446caa7bdc485008ace03e4ec47166",
+    "1256-intervals.json": "dd0cc77f4dbcc4eaf94df4461a65f62efd88a9852ec7cb91e1235d4b49383122",
+    "1257-laps.json": "2f8fec5fc137a2058d15051b46d9cfaf289071c8df7e304eaa964e63cedb5237",
+    "1257-stints.json": "df8fb7bbbbd3aeecd96eca4ea99b44a4655703635f66098c256f7b34ad7d5347",
+    "1257-race_control.json": "4b7a39cd91683e42dc8b0078cee488df5220a4b6a8bbb9fa247dbd0a90985116",
+    "1257-pit.json": "1a256f4ea80dfcce1d2d5d52fc8f97da1147a1fa1455570b142efdb09cd4a1f8",
+    "1257-position.json": "fffb89fdde4c26a8c646b9fed83cf76c939a3408c46589defbab597c37de62c6",
+    "1257-intervals.json": "20275c30ca814d6573ed6baca98132d5d2bde7a4037a7a93029280a0de4819b5",
+    "1258-laps.json": "4a04b220c7e25b5c273b9ccbb1380ec64e00e6514e33a8657910119219c1f4ad",
+    "1258-stints.json": "4d14b735f884932e9ad1fc8327100a7629421b3e4666336489ae07e9eabe1540",
+    "1258-race_control.json": "293a335824464d7c97ad3a31080b801fab020a7958fdc72f5f2c9832f66147b4",
+    "1258-pit.json": "674607058ec54c3b8b554ce47d9606fedce868cff5f5eb7755289520a08ea088",
+    "1258-position.json": "6845cd4a65482f9dedd82efddbda1903d4fc87675a220c83a417bd03c7e06d5b",
+    "1258-intervals.json": "7f8965f402e161c37dd0f6fd806c118ab54c77d95b88820453e32781c012d4f2",
+    "1259-laps.json": "415e1aa3f90018062974b8dea07b390e44857f253e8d8b409d031872a681ee0b",
+    "1259-stints.json": "4e5d0bc0590417379fc2839f0520193268534835512c3e7faac3cb91b202e4fd",
+    "1259-race_control.json": "d4c16de754a4f8b8134ec6d0a7fd3c021b6a17f6f17af84737a290b5f9615155",
+    "1259-pit.json": "2eb49724e68a285e95094fc818fd4c5631e857606e6997b13c00621585360198",
+    "1259-position.json": "f4303fe49930428efd0bbd93b35619f8e7e8479767146c76aec0674b9a133f5f",
+    "1259-intervals.json": "16ce32ed655987dcea91a9170ac3c8ab5e9591df58218e8c233f744d55e234f4",
+    "1260-laps.json": "3486974e9a9152b09fc4c90f3cb89be5f56557393081f536ccabffea1966c867",
+    "1260-stints.json": "c7529139ed6d4881d3ff10c6df4cd699d893ae04ec019f278dddbd44cc4a2fb1",
+    "1260-race_control.json": "790f8b1dd305213a7fd1451e7a6f19fd30e81ef83e9383c1a621d656138171d5",
+    "1260-pit.json": "31d06268f43707d1926d8c4b22af017aff4892cdfd134c984a83ff2fcdd46f4e",
+    "1260-position.json": "0a5533dc07a0394fc1159e130ae5319241d412d559e61b15e1a06271dd904e9f",
+    "1260-intervals.json": "0e15b3799ad7ed50c89ec5c57a7c545a2e84f6cf6f115b636374074b18fc3ff4",
+    "1261-laps.json": "aa2d9fad3f909d3b135f1f2dc80c3138ec81dc88332fd34c6aed46eab680a795",
+    "1261-stints.json": "c615a1debe7d0926b4c85cbc13ac87d441f4b3b3e3c8aa30c66d726a89a3ab41",
+    "1261-race_control.json": "d6a6f9d25897cdd118bfad327ed1bcee012f9006f6cc08b181d6dbcf2969e961",
+    "1261-pit.json": "483f4581216223f0b2036653423feb96e900a3bf71cd3b3a488f35b6dfcf3c33",
+    "1261-position.json": "5be4dc0251f9d21ae6a6d7d16a17eed440e87292aefd9a09ccc444e7f0be8e7e",
+    "1261-intervals.json": "c5e81bf3d8748c5a5ed387a5db0f1f28a0d1382627eea0344dab1e9b7567063c",
+    "1262-laps.json": "cfad25a6ee8c0778190f187f925088fdd56502174f3ac0f589485b3caa32e07e",
+    "1262-stints.json": "5965c6fc05430fdf7c50af3cf6aebbf403fe43292683c7dbdafa10de97899463",
+    "1262-race_control.json": "331df8a4b040f1395d8b3b374cdd4ba39144ac188386af15f7675c1b648312f9",
+    "1262-pit.json": "7039671a339ed186cacaac16b1802cf927c029c8b5739068e60ca592d59ca50a",
+    "1262-position.json": "d46ef8795583d5703b28e7395ba630fe80980a7946ef2e8514404e2aa14c254e",
+    "1262-intervals.json": "8033468856d76f6d35e25b148a599a276421503375f078f53fba57c0ff821f44",
+    "1263-laps.json": "7324106f50f461704517d7c4ed38cff6aef889f501f602428472d1dfd62a4e8e",
+    "1263-stints.json": "e3ce9fa6abb27900035298d628d71248b3251f493cb2e19540a924eca420dd13",
+    "1263-race_control.json": "74708608286140df650db968f6285e2ef2e5105c955524aec7eabdc2566986a7",
+    "1263-pit.json": "599e59dd96405d63474a1d5edbc4d0da22c47ad36747e879b5e643b872008f0e",
+    "1263-position.json": "2dc05e95430fb49739dc7b80920b425c5005c384eb1f9888ef18a6c1554b4e91",
+    "1263-intervals.json": "b84dec7153649effbf1d91f590bb1ce41c9abb873d9671dde07361f849ec5a1e",
+    "1264-laps.json": "358f6fd3208258088a3fe4719b11d285fb3ee2256032d05bdf9caa6432645319",
+    "1264-stints.json": "02b57b3a9b893c06270cc49f172abfb319937cef5d8c52ad84b475bcffa5528c",
+    "1264-race_control.json": "a3e0e6d37a51ca8a39a3598b3c6a3cb6447f1bcf168528b5455c5d47190603ac",
+    "1264-pit.json": "592a838ab0dec5b37f4556158b09aa1ff2328f9d2165a4c0a0a2226bff5833bd",
+    "1264-position.json": "d7702b8d604e0f3a0ceea245e9d26cf07453e0e844b313fba1697f9b2655acfb",
+    "1264-intervals.json": "58cf086d6a2afaad3a535398a86be0abb32a4902001309ec14669889e9c4b796",
+    "1277-laps.json": "77f970ab7267f0e82207a706cf2db5578ab0dc3e7af167197de8b8dbe31094bc",
+    "1277-stints.json": "ec41b518f4b4f9e7565fb9d18a1cab8f64cbaa1d4ae1ecff4fb412adde9f4979",
+    "1277-race_control.json": "35b727e2bdd50360b22c215c671d91d8dfb736f5259c538b79073b6a7ddde4e1",
+    "1277-pit.json": "581dfe25e301becf38aeadf3875c53d9898dcd0e5862921119885265a64f2e4c",
+    "1277-position.json": "02da92c55e3ab57ce84e1dfda79db1691a3fb027eaf26ca0cf3745a97d381c87",
+    "1277-intervals.json": "520bf739ef12424b503f72a3357a709e877327e6d460c78c8d985877a8dc8cc6",
+    "1265-laps.json": "be917216d74473619d51e990f7b8e9590cf0837cd0bc89826558cb2bed235eb2",
+    "1265-stints.json": "789e1c4a18d6277595fb67693ef11048a990dafe8f7911dd422ab9a9ee0bd021",
+    "1265-race_control.json": "0aa65ffa39ede084dfd17f05bcd9d43418e012f8c4849c6d862313b3d6846f69",
+    "1265-pit.json": "98d7442191a3e9b66478b3b10ddddcb2a5b66c96102e52e84632ead19595c2d8",
+    "1265-position.json": "ebaa9fd11c91023cc406d38a1503adb1ff4635a31a9944b56642f14aec876618",
+    "1265-intervals.json": "7739ee4dc9beb1447ad48ea2e0cb6d31e018fbdbf7d810c9b25260a3107b509c",
+    "1266-laps.json": "cae9d92145ce9e871b7b7cb422787f6464a448725454ec8d5bf214aa34dde859",
+    "1266-stints.json": "93edf93ecc8fb9537359816c5b8465a151d0777c8d5ec6393dd3125ff64f179d",
+    "1266-race_control.json": "70cc555a21c6b739dfae15b433038c602355932b3c8263ed24ebd336dfc76cd4",
+    "1266-pit.json": "d56a87c89140600718e00cfea1d9963710a377adf2dace62dfe363283ff2c828",
+    "1266-position.json": "ef28789d3566e735b8346c8169243dd7a3442eb4c97e4c65ea27cf9e448e365e",
+    "1266-intervals.json": "533415792ee9f8f4d4ecb7cb957cdb82ba4756d278550555096eb4d35aebd23a",
+    "1267-laps.json": "6fb8ca6bff3e0e221ddc8d168b63244159466b5a0455a0e14ad53f8c230b5c6c",
+    "1267-stints.json": "01d2dc488e1e8af3021ab76961e2d2f5296a149119316bb439df886328a9fbce",
+    "1267-race_control.json": "9c10182e109a9d5d18f92cafe397b1d3a91051eae11ac9b812bc2cfdf2847a7f",
+    "1267-pit.json": "48b1372dcec3a894b9172a96384eb235b6cd7cca13e0617a4d269e1aee30d404",
+    "1267-position.json": "a809871002d56299e149e6ce08156cb923a537f900f57a3d575fbf669905d304",
+    "1267-intervals.json": "988c4a12acc5ded03fe64c1ec721c7fb1b6163e93936492036e6df81b3eeb3a9",
+    "1268-laps.json": "db1196f933bedf5ba3d8a53f58f2287831c9c032ea3f8b7ea6e2e83ab68a6915",
+    "1268-stints.json": "e7e15d19c0a383e2a97f8a7314911ba9b95551f4bcacc71767e120f392c136b3",
+    "1268-race_control.json": "8e6ca1ad30ea77a3304ea73569ed47de60699d7bc1abe1c7581e3159f85e3c66",
+    "1268-pit.json": "ccbcfa4c85585dd5773e90b093b6bacdbbea8feb758c96f528aeb89e50c44aa6",
+    "1268-position.json": "452d42e5b06dbeccc06279ed95de361239d54fe50f8f25b014dec8a4d0536438",
+    "1268-intervals.json": "9570f3bccabcc2b1b52b070559629cf89975deddb6b7fa93174072bc5beea89e",
+    "1269-laps.json": "1315f06e6a8a7b5453db4aacb024112047417fd64c72a2f7056df20d1d2845f7",
+    "1269-stints.json": "c1b289b906144cea2994553a28f579f8cb2c332cc5e00de27dc7914ace58bfcb",
+    "1269-race_control.json": "4466127546eae3d4f397561e66a1d03183f4ab205eca48feef589c892e3bb221",
+    "1269-pit.json": "c4eba384a56e177a1936a668ced5e874e550cc9ee09b19c799c1f591482cf94c",
+    "1269-position.json": "e8b57eba71f12a094b4e3c377c964eedf5ff16902346b91e0a5662569669f008",
+    "1269-intervals.json": "d6460d1057228459349feb30d7851e98666571cd17e1207349dfcbd06c9e131b",
+    "1270-laps.json": "d2f17aa0f19bd95193fd8cb0e02b1775eb246603ebe7e04fef17516dac23defc",
+    "1270-stints.json": "e0f1a7fd54ff9ebc163533afca7ad2f80b4b8fb001432a114f250bd163527688",
+    "1270-race_control.json": "739bdbafc96b176474e3668705a310deb1b21aa6f73561335df7cf115e1af123",
+    "1270-pit.json": "3ba1283c54a85da9aba291c79bc2b4b5558e9e06ea0582e3d880a697869c8daa",
+    "1270-position.json": "e0304b1d7281215c927778a4e26199ced33ce7906fe1642d885767d5b216bbe2",
+    "1270-intervals.json": "cb00f93ad8aa5dbc0443b3637c63197f3fcad04bcde0e0faf2a87b013968c545",
+    "1271-laps.json": "07ee131437125fa680841825db01548e6fffed0233bb543ec437e6fee59d3d1b",
+    "1271-stints.json": "e1f6c32f56582582a3bac5c2d7044ecdf5b5b1bcdcfe9d4d5bc9b8c93a3731e7",
+    "1271-race_control.json": "d9e3b4e6f3b58845068a694fd5d89d05c8491aa583620a80c315d39285edd48c",
+    "1271-pit.json": "b515c8e3e0aef4bfe99a9611266f333a00a179e915ba9f5fbe8c04d9d6e41bba",
+    "1271-position.json": "0dd09aaac2e2d9175e8d4b9d2b0b45e309b1bb95c99df829e97bdc09699632dd",
+    "1271-intervals.json": "b9b690658d979e2e48bdbec88cf042828751c7eebb78cfd64bed876d8434aec7",
+    "1272-laps.json": "bd5ce03a84b260d9cb65d4574d3904081efe672cfe20f4d141b726c5fc843cd4",
+    "1272-stints.json": "409b8480e461d8cd00d327f187200a395faee075abee2a21e50a21ebf52ea6c5",
+    "1272-race_control.json": "d0e000cd1afb09154e7da46990707c82ba069502cf2ae6e4f986773b994d577f",
+    "1272-pit.json": "cd091e01cb8b6a1d852b5f0458e7f2f77fa521415041a72af947f01885a45641",
+    "1272-position.json": "b2ad63a60cbf40d7e3a3c29289dacf54d7a03f18c241910587c5caacbf7ba1b9",
+    "1272-intervals.json": "7819ed266b91efc0acc0687925acb9be6f22a8ec00a1869e08d303a129f62c21",
+    "1273-laps.json": "e49fdcafe79010d2f5a6ba8e948023be500361fbf6826e564521be930370f993",
+    "1273-stints.json": "1206e78af9b6f47dbd8f82f1cb79949dfab8196cbe30c54fa73e438d88e002bb",
+    "1273-race_control.json": "7b60d7bd1bea1fa396c0a4f948ec2d004e91eb3bd152ea42d51d0a3f8fa11d5e",
+    "1273-pit.json": "08c5c9906d4b62032abc8b5daf38cb506dece4409a694dca930782f55740cbdd",
+    "1273-position.json": "b8f3173dc5cd7c0866b8948ca2ad20d2ba3e899f064341a3d400e28316f26091",
+    "1273-intervals.json": "329cabbd906f46fbdd7918489625cac7a12bb5f741d9e527754ae1a4a90a8d1e",
+    "1274-laps.json": "c10214d2b914d1a9c79c1e6ac1f81bad0632c4a37613ff4df4687cca7a8c2ced",
+    "1274-stints.json": "7987a7c7c5a5507b595f0bf16fd8d3c4435eed2991da03bbbcf0db5faace7064",
+    "1274-race_control.json": "f34adeff420af80c36807011da76e4a992e1066b3e66fc1e11c5ab1bc6c9a83c",
+    "1274-pit.json": "558862ff365c4f01073c8f8d5b65e1a195c27ae37b0e69ba0d0cde1fd001a3f8",
+    "1274-position.json": "04f286aa9a9e3b4fd51838e5c5f82e999aa1fe8e6dd1622534f73a03c886b190",
+    "1274-intervals.json": "b5ec997f062100700cb63ee2c04e16b17030d1acc81e258df33976ef2ae77f78",
+    "1275-laps.json": "e3cf93731d39e7f659d82b497e1fb7d06c6de153f0692ce9be992dc3c2678ddf",
+    "1275-stints.json": "7feed3bf404f8e48c588c2d1b748c270d94303df0a8f070b6675426e92edc5cb",
+    "1275-race_control.json": "af72d1c3afa85d32f13fc1e41a43af02f19bcb8c0e2e333f1e6027575858faae",
+    "1275-pit.json": "bfdc6e6e937d6bd77b892d73984d69d54ad12df50f5ac55bc8220a3b71f5f78e",
+    "1275-position.json": "dd4aa13573a096212ea2eb693b52cb3e03311f3aa75519703738e1a871fb535c",
+    "1275-intervals.json": "0d1b888d9581b69951f545519b851f78d5d373ca311937f6e8b48e1d4ad7f701",
+    "1276-laps.json": "0ff532e7f6254554b4056aa6084eeb126339eb2692b87ae083e60c810b80922f",
+    "1276-stints.json": "a8dbe32370114cf9927f3da2f57e0eaf1325728fb720a2220fe6d478b169691c",
+    "1276-race_control.json": "1baa8cd7c2c137b42231b18939bd06a91dd24c89963b4dabe035ed30f45b8838",
+    "1276-pit.json": "267cfb5fc3d5a61d4f06f70c5639092689335b152ec9c57a40fbb01d1be7dc03",
+    "1276-position.json": "1ee64f348a0b58a7f17834797ac32ea659ea17268c555656156b6858f635f393",
+    "1276-intervals.json": "760165430f8ecc773f5cf24d5137b0eff9bb8f4b4858303f7d26afa1725b201a",
+    "1279-laps.json": "df64f4d9162c7af48e5c3219ffb0a34a41eb7e6297b2d83c53bacd424a4574f9",
+    "1279-stints.json": "dd3ba98b2ca32cea6e0810b966f376a1ea42897e1c347e63e0efc93cca44404e",
+    "1279-race_control.json": "f3dac4c7df18a24ac423b9316bafb3f620faaf70fb594ccc793917bd6e1cd399",
+    "1279-pit.json": "5722caa4981188ae16b03a707e084849e5478a2ec7175c03e02f578598181199",
+    "1279-position.json": "f29279f8cc9d4e32507c14c9c281ea6fc6e612d8e9b7863e8b95ef5b9e0e9b1f",
+    "1279-intervals.json": "9421af2dea234a8b6195e6dd6d4a8ac0ff6914fcdeeb0fff93fe4252cfe15c52",
+    "1280-laps.json": "0ee9810d9d39907a5f9588d1441a1726fb4b94cca3020136e645073b2519a322",
+    "1280-stints.json": "f4af8f6190533443c93cdf3878c3e5223dc58ed906ad8fce8c70798ba8bacda7",
+    "1280-race_control.json": "8316c8f8a0b5d2d6ca68c2cdefbcb2aa32da88ce5961f44f27f5296195fdbb80",
+    "1280-pit.json": "d17b5ca078f9a3412175313ad90c6305439b27a0ea46a82f80d466f7d4deeb35",
+    "1280-position.json": "5620430d3c28e3203851143337881d89d00495a346738cb0b9e47a4c0ff91ae8",
+    "1280-intervals.json": "5925962b391db6a7942e651ca0d16e10b8de32901b969a889e8d54fda721b86f",
+    "1281-laps.json": "f87bf50af1160cb1e06ba753d3731035fd81123ebf6c6c22bcc8e467aa5d71d5",
+    "1281-stints.json": "d3a35dfddba8fca48bc4b7238a93603c99800868aea6b527002c73154ca6e897",
+    "1281-race_control.json": "1ce90bdefed84a4c122a7bd172c41218414dbcd676b44d116a6dfcea1aa8a7d1",
+    "1281-pit.json": "10c07027e5e7fe9781214c22350fc3a0ae038e8620966e4bf4105434abc2cb2b",
+    "1281-position.json": "2a70f522abc12e5bdec906a6896a99328008e1cc387216a9318f2a54845e2b39",
+    "1281-intervals.json": "b6f8ed977a23eb64645e931fcf60bd2114fad31e1848757312b2cbfa616490c7",
+    "1284-laps.json": "a609d1c4f94b09c7528ee55fca891c0401c785015788be8d3df74ff5d7d45ea8",
+    "1284-stints.json": "e350c0df85bbdbcff489af7b720d295f378a903c286cc16f7955df44c3308598",
+    "1284-race_control.json": "657b6451a8bd1109dd43ac0f6054189fdcc20d257e8dffc60f3795e0c7289b09",
+    "1284-pit.json": "449480468edf2a4ba036757649d3a48ab5427879cbeb39c36b1fccc25415e1db",
+    "1284-position.json": "4889c38a0dba216b63b75ee5d4647f7111693e8706adc130622ca736f8f0a510",
+    "1284-intervals.json": "6bd2f16a95fd6f01f1441ad1c5eea5b4706e2715ef738b6da9295e60a7fe4b06",
+    "1285-laps.json": "8c1f6f599254f8f3275a797b83c1d05d9e1edafcb1035bd753529e9ce952ee6a",
+    "1285-stints.json": "2c6bad216a16b8112d863c8d7ac900f7df475274205a5cad84ae212e38c3fe1e",
+    "1285-race_control.json": "f48638b9c46fa1a78bdb4ac3141202314ba07357268ff6b682e9f032757d1b01",
+    "1285-pit.json": "adc185f056c165b40a26983e4ce4dd894c9fe4511eb74317e0161942739c8b54",
+    "1285-position.json": "ffea1d4dc72544d7ab62803a9e9fdd3a0da67049b425f807e8cb4497b291734d",
+    "1285-intervals.json": "590c81df7e536efc4312b8be05a5f28e208ce886a328fda9d8356ed7dd9cdb87",
+    "1286-laps.json": "7ea677e4f37d54e5cdda25d0e2c93b2489b837c7bf656f9a5cc012d1d421376d",
+    "1286-stints.json": "f1c6481a622379688ef77c298fddb4b2b19a0869c5d76d8ceeb0dbfb5697e210",
+    "1286-race_control.json": "8111cc81b8cda3662611b3317d7a4644c748457c0ad477eace35baaf03172c9d",
+    "1286-pit.json": "6d178f24e95754ff62566c84dc8ea88c66ef91d11edb8d311fe5914dde669172",
+    "1286-position.json": "bf1b44ea4321720431d2e63a4922442f1c33b847729c144005be0618bd5ccac4",
+    "1286-intervals.json": "0da93ebeade212417062125738b9be94ac5c0e7ec68bdd18833c348e7563c7c3",
+    "1287-laps.json": "7f321913350dfeb78215966ca05f9ee08e3dd7cf7e2df11e15cc0228cab1aa4a",
+    "1287-stints.json": "a1948288d9451e86c99ecd987dbafc98425ccdc78a05125706ce9df8fe6ae996",
+    "1287-race_control.json": "c029578c480eb7ca9ee1176ed78fede1ea75776aa10e91a7bea6128a2e4ad795",
+    "1287-pit.json": "4348b164bca99f472d8190ef729e6499500fa963586c800f742a69151b5ac057",
+    "1287-position.json": "d752a8c979829cc77c4ccbbd3eb6c4279b12681e0fc65c5172b8f2ee304149f8",
+    "1287-intervals.json": "93f2f75fdb04c96fc4c1b4d752dce46f3d76148f636c06dc1e5e5bad112d5964",
+    "1288-laps.json": "74994ef65b7662c4262ffe03aea1f8e8fa59f278af7a9809a327a9567ac5e754",
+    "1288-stints.json": "0a6bc934a6f8f90c90cc2eedfc9df3cff358c78ec7ef604959301bb3dd96449f",
+    "1288-race_control.json": "ad86d68e59a8a6c1ed811ddf0218e24ce7a6a367fd4e5ad2c0463466ce55cd88",
+    "1288-pit.json": "c13fb66b8a8e2df695ee5fc384d04099b8a856a4a98c5e82201a5a776e324e4d",
+    "1288-position.json": "c8dd0f10e887e4a509567979aa6c384d4a4387d8981bfe8acd5736384b7f91ca",
+    "1288-intervals.json": "5d8b22559e7e4670c6d7878519ab2b7b548860c6a59cfc2e3a1bb6f1b84e11cb",
+    "1289-laps.json": "5d6c2abe13ef6e2080eff75726d5a5a471dd6948315255b7c7dae19cb19cc1de",
+    "1289-stints.json": "eef8d136baba86a65c027f7f9d16cbea5ebec486a6cd557e3782936b25174d4b",
+    "1289-race_control.json": "08eccded00833241608dd1b981357471e879cbc201d5b046dd695be8be3ed274",
+    "1289-pit.json": "144c88516635cd82e2b369a8d4665cf71fd8652076d56d4e4b2842d5da7d255d",
+    "1289-position.json": "e8b8aa3be8ed2b2363ca72fb4dcb455ba5145076820a5cfbc48c8ca12abd20be",
+    "1289-intervals.json": "d4382e6b2c329bf3145a97ac2a42ae857790f5f280a9658dd3f226b5486d32ee",
+    "1290-laps.json": "8b3d61df5cf1d7f9a92b37dc0a611798b5bac0f82a0c1d5b26c2e1a281718789",
+    "1290-stints.json": "728214a0d4ec9bb57ccbc01111d490944d86e62b26dac46e5530e1fdb397c994",
+    "1290-race_control.json": "6a1b55d76aaf2a24279a294c45f43295df3c46bdc62cdd71192bfb9ffed928f1",
+    "1290-pit.json": "a578110fc83ce16dd2b382360b6877e359b22fdbe4b83e7dffdf7ee0c3e45496",
+    "1290-position.json": "18ce8b3b4be87d392a7e506b7f23bd32acf181384b1ff92b63b7c3c14ce6aecc",
+    "1290-intervals.json": "2d3ce3a2d62c96daae99660d41d2625a1ded5e02029d59455fe58bc536a61297",
+    "1291-laps.json": "75a7a08db53a43771f472ffc1ed12bd879de87a32e56a24fbc720ea389c863f9",
+    "1291-stints.json": "812a12659d63857b5db214adf18d5460d534a59a254ed11a3f142a3440474cdd",
+    "1291-race_control.json": "f7d112507561d372e5391386f9bfd1943c905b1625891c442040dbcea15dd47f",
+    "1291-pit.json": "28d7144dd6ce2744e82f92953ea52e8af9295dbfcb82cf7406c46dc0732e2628",
+    "1291-position.json": "77102d19f453be6ed3b3ea5284293eea6ec8942f3cbbcb2ac4e7509edccbd2b8",
+    "1291-intervals.json": "c14bc910a61ac4811a69ee7ba3e915b134cdf02fae1a8abb9eb4fe530918f98e",
+    "1292-laps.json": "621c474bfcf010f3b417be72dcd3f22ee5dbbda8022ea74db69872fb50158e9d",
+    "1292-stints.json": "828f36309088cd78f1aa4b3916bb18f905e68d74f4c929020946c0dd91f04ce7",
+    "1292-race_control.json": "5c9fcf07f247a02cf26743a69757d03ca730af2c8792d1a2d5f506c963f84bbd",
+    "1292-pit.json": "3f2378590b37e26e8db4e507b65bbea54c84d711507c4558102c9f978d2a1617",
+    "1292-position.json": "29e352d8d6db9e770e1ab41738f81c4b5748fd0f86d868561aa73a84b20ea105",
+    "1292-intervals.json": "f20d45d7832ee4f3b62ee679437b71767df602989cc6f66a1a7175d2b285a720",
+    "1293-laps.json": "655eb99232e0e8eecb508b85b6253bc63d44556db01b2915183170c83a06d43d",
+    "1293-stints.json": "09ed3cf324f19c782c29c709326d4a9718e5b8baf6e6adf305925012cb0064cd",
+    "1293-race_control.json": "f0848416863c52c555d48f3a85b3a9eaa0c49b4f5fb6393fcba6b63c55cb0b8f",
+    "1293-pit.json": "8ae818dbff916eba7714689bc189eeb89429ac1143afc4e6699b990522bcb7e8",
+    "1293-position.json": "00da9c696c34b509e75dddb3ef69919a1071296b52aaad6a33fa2c157aa66cba",
+    "1293-intervals.json": "3c18d43b5ff35f7f0744af8409bc55b25d3b8eb350e5c39f36fa2a1bbe0cf3d4",
+    "1294-laps.json": "192d85dc53705a1f3016dedc4ae3248968bda5a657a01fb15936e4547e852361",
+    "1294-stints.json": "cb88e8d015fb60327cae349b194d8829f1087bc55f13c26f8a8f357323a4b312",
+    "1294-race_control.json": "36a65a57d6544dbf1571ad96969672b884487dd55b3c648c87444da53f124b94",
+    "1294-pit.json": "971cd3448d96e42f836ab1157249fc27272ba503973020cb9a897390de1396c0",
+    "1294-position.json": "661557eba28b656dbee09484e289c55d3f64738a09cef6aff5009ca33e040b89",
+    "1294-intervals.json": "de2e33681b13e9a455bc2cfd44a859a8574be62396bc4b7f0ac648263c8a72a0"
+  }
+}

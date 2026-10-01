@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="F1 lap comparison and race strategy analysis by Min Annie Ji. Explore telemetry, sector timing and tyre-age trends using public historical data." />
+    <meta name="theme-color" content="#090b0f" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="stylesheet" href="./styles.css?v=20261001" />
+    <meta name="author" content="Min Annie Ji" />
+    <link rel="canonical" href="https://minnnieeee.github.io/f1-performance-lab/" />
+    <title>Min Annie Ji Performance Lab</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div>
+            <p class="eyebrow">Min Annie Ji · Performance engineering</p>
+            <h1>F1 Performance Lab</h1>
+          </div>
+        </div>
+        <div class="session-ribbon" aria-live="polite">
+          <span id="connection-dot" class="status-dot preview"></span>
+          <span id="connection-label">Loading Silverstone example</span>
+          <span class="ribbon-divider"></span>
+          <span id="session-clock" class="mono">--:--:-- KST</span>
+        </div>
+      </header>
+
+      <section class="featured-case" aria-labelledby="featured-case-title">
+        <div class="case-introduction">
+          <p class="case-eyebrow">Silverstone 2023 · Qualifying · Norris / Piastri</p>
+          <h2 id="featured-case-title">A closer look at Norris's 0.131s advantage</h2>
+          <p>On lap 25, Norris gained 0.090s in sector 1. His sampled minimum speed in the first slow-speed zone was 98km/h, compared with Piastri's 93km/h. Their full-throttle transition intervals overlapped.</p>
+          <p class="case-judgment">The next comparison should focus on deceleration and minimum speed. The available samples do not establish an earlier return to full throttle.</p>
+          <div class="case-actions"><button id="open-featured-case" class="primary-button" type="button">Compare lap 25</button><a href="#methodology">Methods &amp; data</a></div>
+        </div>
+        <dl class="case-facts">
+          <div><dt>Reported lap advantage · Norris</dt><dd>0.131s</dd></div>
+          <div><dt>Reported sector 1 advantage</dt><dd>0.090s</dd></div>
+          <div><dt>Zone 1 sampled minimum · NOR / PIA</dt><dd>98 / 93<span>km/h</span></dd></div>
+        </dl>
+        <details class="case-evidence"><summary>Evidence and interpretation</summary>
+          <p>Both laps use source-reported fresh soft tyres with a tyre age of 1 at lap start and a green track status. Their starts were 4.324s apart; fuel, setup and tow conditions are not controlled.</p>
+          <div class="table-scroll"><table class="analysis-table"><caption>Lap 25 · Norris minus Piastri; negative means Norris is quicker</caption><thead><tr><th>Reported timing</th><th>Norris</th><th>Piastri</th><th>Difference</th></tr></thead><tbody><tr><td>Lap</td><td>86.961s</td><td>87.092s</td><td>−0.131s</td></tr><tr><td>Sector 1</td><td>27.544s</td><td>27.634s</td><td>−0.090s</td></tr><tr><td>Sector 2</td><td>35.312s</td><td>35.350s</td><td>−0.038s</td></tr><tr><td>Sector 3</td><td>24.105s</td><td>24.108s</td><td>−0.003s</td></tr></tbody></table></div>
+          <p><b>Candidate mechanism.</b> Zone 1 spans 13.6–27.2% of estimated reference progress. Norris's higher sampled minimum suggests a difference around the slowest part of the zone. The first ≥95% throttle transition after that minimum falls at 18.71–19.00% for Norris and 18.68–18.94% for Piastri. Those brackets overlap; they do not establish earlier recovery or equal exit performance.</p>
+          <p><b>What the data cannot settle.</b> The zone's time difference is unavailable because position coverage does not support its boundaries. At the sector 1 boundary, position-derived and reported time differences disagree by about 0.045s. This is a consistency check, not an error bound: the full 0.090s sector advantage cannot be assigned to this zone or phase.</p>
+          <div id="case-followup"><p>Loading the follow-up comparison…</p></div>
+          <p><b>Next engineering step.</b> Compare deceleration and minimum-speed behaviour on laps with matched conditions before considering a setup change. On lap 22, Norris was 0.658s slower overall; tyre ages and start times differ. Lap 25 alone does not establish a repeatable driver trait or identify a tyre-grip or vehicle-balance cause.</p>
+          <p class="case-source">Formula 1 historical timing data, parsed with FastF1. <a href="./data/demo.json" download>Data and provenance</a>. Select Compare lap 25 to return to this example.</p>
+        </details>
+      </section>
+
+      <div class="tool-heading"><h2>Lap comparison</h2><p>Select two laps to compare timing, speed and driver inputs.</p></div>
+      <nav class="mode-navigation" aria-label="Data mode">
+        <button class="mode-button" data-mode="replay" type="button" aria-pressed="false">REPLAY</button>
+        <div class="secondary-modes">
+          <button id="load-demo" class="mode-button active" type="button" aria-pressed="true">Open example</button>
+          <button class="mode-button" data-mode="live" type="button" aria-pressed="false">LIVE</button>
+        </div>
+      </nav>
+      <section class="control-deck" aria-label="DATA CONNECTION">
+
+        <div class="control-field session-field">
+          <span class="field-label">Event / session</span>
+          <select id="replay-year" aria-label="Replay year"><option>2026</option><option>2025</option><option>2024</option><option>2023</option></select>
+          <select id="replay-session" aria-label="Select event and session">
+            <option value="">Loading session list</option>
+          </select>
+          <strong id="session-name" class="hidden">Loading F1 session</strong>
+          <span id="source-label" class="source-chip">Choose a session</span>
+        </div>
+
+        <label class="control-field select-field">
+          <span class="field-label">Driver A</span>
+          <select id="driver-a" aria-label="Driver A"></select>
+        </label>
+
+        <label class="control-field select-field">
+          <span class="field-label">Driver B</span>
+          <select id="driver-b" aria-label="Driver B"></select>
+        </label>
+
+        <div id="live-controls" class="connect-zone hidden">
+          <label class="token-field">
+            <span class="sr-only">OpenF1 access token</span>
+            <input id="access-token" type="password" autocomplete="off" placeholder="OpenF1 access token" />
+          </label>
+          <button id="connect-live" class="primary-button" type="button">Connect &amp; watch</button>
+          <p>No upload needed. Paid OpenF1 token required. Keep this page open to watch for sessions after connecting. The token is not persisted.</p>
+        </div>
+      </section>
+
+      <p id="access-note" class="access-note hidden"></p>
+      <section id="replay-feedback" class="replay-feedback hidden" aria-live="polite">
+        <div><strong id="replay-feedback-title"></strong><p id="replay-feedback-detail"></p></div>
+        <button id="error-open-demo" class="text-button" type="button">Open example</button>
+      </section>
+      <section id="result-overview" class="result-overview" aria-live="polite"></section>
+      <button id="open-race-demo" class="primary-button" type="button">Explore race strategy ↗</button>
+          <section id="lap-comparison" class="lap-comparison" aria-label="Comparison conditions">
+        <div><label for="lap-a">A · comparison lap</label><select id="lap-a"></select><p id="lap-context-a"></p></div>
+        <div><label for="lap-b">B · comparison lap</label><select id="lap-b"></select><p id="lap-context-b"></p></div>
+        <details class="comparison-details"><summary id="comparison-details-label">Comparison conditions &amp; limits</summary><p id="comparison-warning" class="engineering-note"></p></details>
+      </section>
+
+      <section id="trace-toolbar" class="trace-toolbar">
+        <div class="axis-buttons" role="group" aria-label="Comparison axis">
+          <button id="axis-progress" class="text-button" type="button" aria-pressed="true">Estimated progress</button>
+          <button id="axis-time" class="text-button" type="button" aria-pressed="false">Lap time</button>
+        </div>
+        <div class="range-controls"><label><span id="range-from-label">From %</span><input id="range-from" type="number" min="0" max="99.5" step="0.5" value="0" /></label><label><span id="range-to-label">To %</span><input id="range-to" type="number" min="0.5" max="100" step="0.5" value="100" /></label><button id="apply-range" class="text-button" type="button">Zoom</button><button id="reset-range" class="text-button" type="button">Full lap</button></div>
+        <p id="trace-help"></p>
+      </section>
+
+      <main class="dashboard-grid">
+        <section class="panel speed-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Speed</h2>
+            </div>
+            <div class="chart-legend" aria-label="Driver legend">
+              <span><i class="legend-a"></i><b id="legend-a">NOR</b></span>
+              <span><i class="legend-b"></i><b id="legend-b">VER</b></span>
+            </div>
+          </div>
+          <div class="chart-wrap">
+            <span class="axis-unit">km/h</span>
+            <svg id="speed-chart" class="telemetry-chart" viewBox="0 0 1000 290" preserveAspectRatio="none" role="img" aria-label="Two-driver speed trace">
+              <g class="chart-grid">
+                <line x1="0" y1="0" x2="1000" y2="0"></line>
+                <line x1="0" y1="72.5" x2="1000" y2="72.5"></line>
+                <line x1="0" y1="145" x2="1000" y2="145"></line>
+                <line x1="0" y1="217.5" x2="1000" y2="217.5"></line>
+                <line x1="0" y1="290" x2="1000" y2="290"></line>
+              </g>
+              <path id="speed-a" class="trace trace-a"></path>
+              <path id="speed-b" class="trace trace-b"></path>
+              <line id="speed-cursor" class="time-cursor" x1="0" x2="0" y1="0" y2="290"></line>
+            </svg>
+            <div id="speed-tooltip" class="chart-tooltip hidden" role="status"></div>
+            <div class="y-labels"><span>360</span><span>270</span><span>180</span><span>90</span><span>0</span></div>
+            <div class="x-labels mono"><span id="x-start">0.0s</span><span id="x-mid">30.0s</span><span id="x-end">60.0s</span></div>
+          </div>
+        </section>
+
+        <aside class="panel live-readout-panel">
+          <div class="panel-heading compact">
+            <div>
+              <h2>Current state</h2>
+            </div>
+            <span id="data-age" class="data-age mono">--.- s old</span>
+          </div>
+
+          <div class="driver-readout driver-a-readout">
+            <div class="driver-id"><span>A</span><strong id="readout-name-a">NOR</strong></div>
+            <div class="speed-value"><strong id="speed-value-a">—</strong><span>km/h</span></div>
+            <div class="readout-grid">
+              <div><span>Throttle</span><strong id="throttle-a">—%</strong></div>
+              <div><span>BRAKE</span><strong id="brake-a">OFF</strong></div>
+              <div><span>GEAR</span><strong id="gear-a">—</strong></div>
+              <div><span>RPM</span><strong id="rpm-a">—</strong></div>
+              <div><span>DRS channel</span><strong id="drs-a">—</strong></div>
+              <div><span>Derived ax · m/s²</span><strong id="ax-a">—</strong></div>
+            </div>
+          </div>
+
+          <div class="driver-readout driver-b-readout">
+            <div class="driver-id"><span>B</span><strong id="readout-name-b">VER</strong></div>
+            <div class="speed-value"><strong id="speed-value-b">—</strong><span>km/h</span></div>
+            <div class="readout-grid">
+              <div><span>Throttle</span><strong id="throttle-b">—%</strong></div>
+              <div><span>BRAKE</span><strong id="brake-b">OFF</strong></div>
+              <div><span>GEAR</span><strong id="gear-b">—</strong></div>
+              <div><span>RPM</span><strong id="rpm-b">—</strong></div>
+              <div><span>DRS channel</span><strong id="drs-b">—</strong></div>
+              <div><span>Derived ax · m/s²</span><strong id="ax-b">—</strong></div>
+            </div>
+          </div>
+
+          <div class="delta-block">
+            <span id="delta-label">Speed difference · A − B</span>
+            <strong id="speed-delta" class="mono">—km/h</strong>
+          </div>
+        </aside>
+
+        <section class="panel inputs-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Throttle &amp; braking events</h2>
+            </div>
+            <p class="limitation"><span>!</span> Brake is ON/OFF, not pressure</p>
+          </div>
+          <div class="chart-wrap input-chart-wrap">
+            <span class="axis-unit">%</span>
+            <svg id="input-chart" class="telemetry-chart" viewBox="0 0 1000 210" preserveAspectRatio="none" role="img" aria-label="Throttle and brake events">
+              <g class="chart-grid">
+                <line x1="0" y1="0" x2="1000" y2="0"></line>
+                <line x1="0" y1="105" x2="1000" y2="105"></line>
+                <line x1="0" y1="210" x2="1000" y2="210"></line>
+              </g>
+              <g id="brake-bands-a" class="brake-bands brake-a"></g>
+              <g id="brake-bands-b" class="brake-bands brake-b"></g>
+              <path id="throttle-line-a" class="trace trace-a"></path>
+              <path id="throttle-line-b" class="trace trace-b"></path>
+              <line id="input-cursor" class="time-cursor" x1="0" x2="0" y1="0" y2="210"></line>
+            </svg>
+            <div id="input-tooltip" class="chart-tooltip input-tooltip hidden" role="status"></div>
+            <div class="y-labels short"><span>100</span><span>50</span><span>0</span></div>
+            <div class="brake-key"><span class="brake-key-a"></span>A brake <span class="brake-key-b"></span>B brake</div>
+          </div>
+        </section>
+
+        <section class="panel track-panel">
+          <div class="panel-heading compact">
+            <div>
+              <h2>Position trace</h2>
+            </div>
+            <span class="approx-badge">Estimated</span>
+          </div>
+          <div id="playback-controls" class="playback-controls hidden" aria-label="Lap playback">
+            <div class="playback-actions">
+              <button id="playback-toggle" class="primary-button" type="button">PAUSE</button>
+              <button id="playback-restart" class="text-button" type="button" aria-label="Restart lap playback">↺ RESTART</button>
+              <label>Speed <select id="playback-speed" aria-label="Playback speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+            </div>
+            <div class="playback-status"><span id="playback-state">PLAYING · LOOP</span><span id="playback-clock" class="mono"></span></div>
+            <input id="playback-seek" type="range" min="0" max="1000" step="1" value="0" aria-label="Lap playback position" />
+            <p id="playback-note"></p>
+          </div>
+          <div class="track-canvas">
+            <svg id="track-map" viewBox="0 0 600 350" role="img" aria-label="Approximate track positions of two cars">
+              <path id="track-base" class="track-base"></path>
+              <path id="track-path-a" class="track-path track-path-a"></path>
+              <path id="track-path-b" class="track-path track-path-b"></path>
+              <path id="track-selection" class="track-selection"></path>
+              <circle id="car-marker-a" class="car-marker car-marker-a" r="7" cx="-20" cy="-20"></circle>
+              <circle id="car-marker-b" class="car-marker car-marker-b" r="7" cx="-20" cy="-20"></circle>
+            </svg>
+            <div class="track-empty" id="track-empty">Waiting for position data</div>
+          </div>
+          <p class="track-note">Public position data indicates approximate progress; it is not suitable for lateral racing-line analysis.</p>
+        </section>
+
+        <section class="panel engineering-panel">
+          <div class="panel-heading compact">
+            <div>
+              <h2>Rolling window</h2>
+            </div>
+            <span class="window-label mono" id="window-label">60s</span>
+          </div>
+          <div class="cue-grid">
+            <div><span>A minimum speed</span><strong id="min-speed-a">—</strong><small>km/h</small></div>
+            <div><span>B minimum speed</span><strong id="min-speed-b">—</strong><small>km/h</small></div>
+            <div><span>A FULL THROTTLE</span><strong id="full-throttle-a">—</strong><small>% samples ≥95%</small></div>
+            <div><span>B FULL THROTTLE</span><strong id="full-throttle-b">—</strong><small>% samples ≥95%</small></div>
+            <div><span>A BRAKE EVENTS</span><strong id="brake-events-a">—</strong><small>onsets</small></div>
+            <div><span>B BRAKE EVENTS</span><strong id="brake-events-b">—</strong><small>onsets</small></div>
+          </div>
+          <p class="alignment-note" id="alignment-note">Replay uses each driver's lap elapsed time; use DISTANCE for approximate alignment.</p>
+        </section>
+
+        <section class="panel event-panel">
+          <div class="panel-heading compact">
+            <div>
+              <h2>Driver events</h2>
+            </div>
+            <button id="clear-events" class="text-button" type="button">Clear</button>
+          </div>
+          <ol id="event-list" class="event-list" aria-live="polite"></ol>
+        </section>
+      </main>
+
+      <section class="analysis-lab" aria-labelledby="analysis-title">
+        <header class="analysis-header">
+          <div>
+            <h2 id="analysis-title">Analysis</h2>
+          </div>
+          <div class="analysis-actions">
+            <button id="export-json" class="text-button" type="button">JSON</button>
+            <button id="export-csv" class="text-button" type="button">CSV</button>
+            <span id="analysis-status" class="analysis-status mono">Load two laps</span>
+            <button id="load-session-model" class="primary-button" type="button">Load pace &amp; strategy</button>
+          </div>
+        </header>
+
+        <div class="analysis-tabs" role="tablist" aria-label="Performance analysis">
+          <button class="analysis-tab active" id="tab-distance" data-analysis-tab="distance" role="tab" aria-selected="true" aria-controls="panel-distance" type="button">Alignment</button>
+          <button class="analysis-tab" id="tab-corners" data-analysis-tab="corners" role="tab" aria-selected="false" aria-controls="panel-corners" type="button">Speed zones</button>
+          <button class="analysis-tab" id="tab-stints" data-analysis-tab="stints" role="tab" aria-selected="false" aria-controls="panel-stints" type="button">Pace &amp; tyres</button>
+          <button class="analysis-tab" id="tab-strategy" data-analysis-tab="strategy" role="tab" aria-selected="false" aria-controls="panel-strategy" type="button">Strategy</button>
+          <button class="analysis-tab" id="tab-model" data-analysis-tab="model" role="tab" aria-selected="false" aria-controls="panel-model" type="button">Model validation</button>
+          <button class="analysis-tab" id="tab-case" data-analysis-tab="case" role="tab" aria-selected="false" aria-controls="panel-case" type="button">Selected-lap notes</button>
+        </div>
+
+        <div class="analysis-body">
+          <section id="panel-distance" class="analysis-panel" data-analysis-panel="distance" role="tabpanel" aria-labelledby="tab-distance">
+            <div class="analysis-metric-grid">
+              <div><span>Finish Δ · A − B</span><strong id="distance-finish-delta">—</strong><small>s</small></div>
+              <div><span>Max A gain</span><strong id="distance-max-gain">—</strong><small>s</small></div>
+              <div><span>Max A loss</span><strong id="distance-max-loss">—</strong><small>s</small></div>
+              <div><span>Position samples</span><strong id="distance-samples">—</strong><small>min(A,B)</small></div>
+            </div>
+            <button id="open-linked-traces" class="text-button" type="button">Open linked traces ↗</button>
+            <p class="engineering-note">Positive Δt means A takes longer at the same estimated progress. <a href="#methodology">Alignment method</a>.</p>
+            <div id="sector-checks" class="table-scroll"></div>
+          </section>
+
+          <section id="panel-corners" class="analysis-panel hidden" data-analysis-panel="corners" role="tabpanel" aria-labelledby="tab-corners">
+            <div class="table-scroll">
+              <table class="analysis-table">
+                <thead><tr><th>Speed zone</th><th>Progress / input class</th><th>A start / minimum / end</th><th>B start / minimum / end</th><th>Window Δt · A−B</th></tr></thead>
+                <tbody id="corner-table-body"><tr><td colspan="5">Waiting for aligned laps</td></tr></tbody>
+              </table>
+            </div>
+            <p class="engineering-note">Zones follow sampled speed minima, not official corner boundaries. <a href="#methodology">How zones are defined</a>.</p>
+          </section>
+
+          <section id="panel-stints" class="analysis-panel hidden" data-analysis-panel="stints" role="tabpanel" aria-labelledby="tab-stints">
+            <section id="session-pace" aria-labelledby="session-pace-title">
+              <h3 id="session-pace-title">Next-lap pace</h3>
+              <p>Practice, qualifying, sprint and race. Choose a completed lap independently of the comparison graphs; only earlier observations enter the prediction.</p>
+              <div class="assumption-grid pace-controls">
+                <label><span>Forecast after · A</span><select id="pace-origin-a" aria-label="Pace origin A"></select></label>
+                <label><span>Forecast after · B</span><select id="pace-origin-b" aria-label="Pace origin B"></select></label>
+                <label><span>A · assumed pace change</span><input id="pace-offset-a" type="number" min="-5" max="5" step="0.1" value="0" /><small>s/lap · negative means quicker</small></label>
+                <label><span>B · assumed pace change</span><input id="pace-offset-b" type="number" min="-5" max="5" step="0.1" value="0" /><small>s/lap · negative means quicker</small></label>
+                <label><span>Fuel gain · trend model</span><input id="pace-fuel" type="number" min="0" max="0.15" step="0.005" value="0.035" /><small>s/lap · assumed, not measured</small></label>
+              </div>
+              <div id="session-pace-result" aria-live="polite">Load a session to calculate pace.</div>
+              <p class="engineering-note">Forecasts require three usable laps in the same recorded stint; shorter runs show only an observed reference. Predictions assume that run continues. Pace change is your assumed effect, not a calculated setup response. <a href="./session-audit.md">Scope and observed errors</a>.</p>
+            </section>
+            <div class="model-summary-grid">
+              <article><span>Track evolution</span><strong id="track-evolution">—</strong><small id="track-evolution-note">Waiting for session context</small></article>
+              <article><span>Traffic · A</span><strong id="traffic-a">—</strong><small>interval &lt; 1.5s</small></article>
+              <article><span>Traffic · B</span><strong id="traffic-b">—</strong><small>interval &lt; 1.5s</small></article>
+              <article><span>Rainfall report</span><strong id="track-condition">—</strong><small id="track-condition-note">weather data</small></article>
+            </div>
+            <div class="table-scroll">
+              <table class="analysis-table stint-table">
+                <thead><tr><th>Driver</th><th>Stint / tyre</th><th>Usable laps</th><th>Raw pace</th><th>Fuel correction</th><th>Track correction</th><th>Pace-age slope</th><th>In-sample fit</th></tr></thead>
+                <tbody id="stint-table-body"><tr><td colspan="8">Load pace &amp; strategy first.</td></tr></tbody>
+              </table>
+            </div>
+            <p class="engineering-note">Pace-age trends include fuel and track effects; they are not tyre degradation alone. <a href="#methodology">Model assumptions</a>.</p>
+          </section>
+
+          <section id="panel-strategy" class="analysis-panel hidden" data-analysis-panel="strategy" role="tabpanel" aria-labelledby="tab-strategy">
+            <div id="race-replay" class="race-replay">
+              <div class="race-heading"><div><span class="panel-kicker">Historical race</span><h3 id="race-title">Pit timing comparison</h3></div><span id="race-condition" class="quality-badge" hidden>NO SNAPSHOT</span></div>
+              <p id="race-intro" class="engineering-note">Choose a completed Race or Sprint in REPLAY. Select A's completed lap to reconstruct a historical decision point. No LIVE connection.</p>
+              <label><span id="race-data-label">Saved example or current replay</span><select id="race-demo-case" aria-label="Saved race example or current replay"><option value="9213">Example · Austin 2023 · VER / HAM</option><option value="9189">Example · Las Vegas 2023 · VER / LEC · SC recovery</option><option value="9157">Example · Monza 2023 · VER / PER</option><option value="9165">Example · Singapore 2023 · SAI / NOR</option><option value="current">Current REPLAY Race / Sprint</option></select></label>
+              <p id="race-selection-help" class="engineering-note"></p>
+              <div class="race-load-controls"><label><span id="race-cutoff-label">Decision point: end of driver A lap</span><select id="race-cutoff" aria-label="Historical decision lap"></select></label><button id="race-load" class="primary-button" type="button">Load race snapshot</button><button id="race-export" class="text-button" type="button" disabled>Export scenario JSON</button></div>
+              <p id="race-availability-status" class="engineering-note" role="status"></p>
+              <p id="race-status" class="engineering-note" role="status" aria-live="polite"></p>
+              <p id="race-quick-result" class="race-quick-result" role="status" aria-live="polite"></p>
+              <p id="race-observed-summary" class="engineering-note" aria-live="polite"></p>
+              <div class="assumption-grid race-assumptions">
+                <label><span id="race-compound-a-label">A · replacement compound</span><select id="race-compound-a" aria-label="A replacement compound"></select><small id="race-compound-a-help"></small></label>
+                <label><span id="race-compound-b-label">B · replacement compound</span><select id="race-compound-b" aria-label="B replacement compound"></select><small id="race-compound-b-help"></small></label>
+                <label><span id="race-control-label">Track condition</span><select id="race-control" aria-label="Strategy track condition"><option value="observed">From recorded status</option><option value="GREEN">GREEN · assumed</option><option value="SC">SC · assumed</option><option value="VSC">VSC · assumed</option></select></label>
+                <label><span id="race-extrapolation-label">Age extrapolation allowance · assumed</span><input id="race-max-extrapolation" type="number" min="0" max="20" step="1" value="5"><small>laps outside observed ages · not a tyre limit</small></label>
+                <label><span id="race-neutral-label">SC/VSC duration · assumed</span><input id="race-neutral-laps" type="number" min="1" max="30" value="2" step="1"><small>future laps</small></label>
+                <label><span id="race-pace-range-label">Relative pace range · assumed</span><input id="race-pace-range" type="number" min="0" max="3" value="0.3" step="0.1"><small>± s/lap · not confidence</small></label>
+                <label><span id="race-pit-range-label">Relative pit-loss range · assumed</span><input id="race-pit-range" type="number" min="0" max="10" value="2" step="0.5"><small>± s · not confidence</small></label>
+                <label><span id="race-traffic-a-label">A · post-stop traffic cost</span><input id="race-traffic-a" type="number" min="0" max="5" value="0" step="0.1"><small>s/lap · assumed</small></label>
+                <label><span id="race-traffic-b-label">B · post-stop traffic cost</span><input id="race-traffic-b" type="number" min="0" max="5" value="0" step="0.1"><small>s/lap · assumed</small></label>
+                <label><span id="race-traffic-laps-label">Traffic duration · assumed</span><input id="race-traffic-laps" type="number" min="0" max="10" value="1" step="1"><small>laps after stop</small></label>
+              </div>
+            </div>
+            <div class="assumption-grid" aria-label="Strategy assumptions">
+              <label><span>Horizon · H</span><input id="strategy-horizon" type="number" min="3" max="30" step="1" value="12" /><small id="race-horizon-help">Evaluation ends H laps from the decision; changes the question.</small></label>
+              <label><span>Delay stop by · d</span><input id="strategy-delay" type="number" min="1" max="29" step="1" value="3" /><small id="race-delay-help">Stop schedule: B waits in A-first; A waits in A-later.</small></label>
+              <label><span>A · warm-up penalty</span><input id="strategy-warmup" type="number" min="0" max="5" step="0.1" value="0.6" /><small>s · assumed</small></label>
+              <label><span>B · warm-up penalty</span><input id="race-warmup-b" type="number" min="0" max="5" step="0.1" value="0.6"/><small>s · assumed</small></label>
+              <label><span>Fuel gain</span><input id="strategy-fuel-gain" type="number" min="0" max="0.15" step="0.005" value="0.035" /><small>s/lap</small></label>
+              <label><span>Green pit loss</span><input id="strategy-pit-loss" type="number" min="10" max="40" step="0.5" value="22" /><small>s</small></label>
+              <label><span>SC loss</span><input id="strategy-sc-factor" type="number" min="0.35" max="0.9" step="0.05" value="0.60" /><small>× green</small></label>
+              <label><span>VSC loss</span><input id="strategy-vsc-factor" type="number" min="0.35" max="0.95" step="0.05" value="0.75" /><small>× green</small></label>
+            </div>
+            <p id="strategy-effective" class="engineering-note" aria-live="polite"></p>
+            <p class="engineering-note">The historical pace check did not outperform recent-lap averaging. <button id="open-prediction-validation" class="text-button" type="button">View prediction checks ↗</button></p>
+            <div id="race-results">
+              <div id="race-result-head" aria-live="polite"></div>
+              <section id="race-primary-inputs"><h3 id="race-primary-title"></h3><div id="race-primary-grid" class="assumption-grid"></div></section>
+              <div id="race-fuel"></div>
+              <details id="race-assumptions-section" class="race-section"><summary><span id="race-assumptions-title"></span><span id="race-assumptions-count" class="race-count"></span></summary><div id="race-other-grid" class="assumption-grid race-assumptions"></div><div id="race-assumptions-notes"></div></details>
+              <details id="race-evidence-section" class="race-section"><summary><span id="race-evidence-title"></span><span id="race-evidence-count" class="race-count"></span></summary><div id="race-evidence-body"></div></details>
+              <details id="race-scan-section" class="race-section"><summary><span id="race-scan-title"></span><span id="race-scan-count" class="race-count"></span></summary><div id="race-scan-body"></div></details>
+              <details id="race-rejoin-section" class="race-section"><summary><span id="race-rejoin-title"></span><span id="race-rejoin-count" class="race-count"></span></summary><div id="race-rejoin-body"></div></details>
+              <details id="race-methods-section" class="race-section"><summary id="race-methods-title"></summary><div id="race-methods-body"></div></details>
+            </div>
+            <details class="race-legacy" hidden><summary id="race-legacy-label">Full-session benchmark · not restricted to the decision point</summary>
+            <div class="strategy-grid">
+              <article><span id="strategy-name-a">A</span><strong id="strategy-result-a">—</strong><small id="strategy-detail-a">Waiting for session context</small></article>
+              <article><span id="strategy-name-b">B</span><strong id="strategy-result-b">—</strong><small id="strategy-detail-b">Waiting for session context</small></article>
+              <article><span>FRESH-TYRE PACE ADVANTAGE · A vs B</span><strong id="undercut-result">—</strong><small id="undercut-detail">Not an undercut or position prediction</small></article>
+              <article><span>SC / VSC SAVING</span><strong id="sc-saving">—</strong><small id="sc-detail">Pit-loss saving vs green</small></article>
+            </div>
+            <div class="race-control-summary"><span>SESSION CONTROL</span><p id="race-control-note">Load session context to inspect SC/VSC messages alongside the assumptions.</p></div>
+            <p class="engineering-note">One same-compound tyre change within the chosen horizon: delayed stop total minus pit-now total. Positive = pit now is quicker in this model. Equal pit loss, fuel terms and equal warm-up penalties cancel between these candidates. Green pit loss only changes the SC/VSC saving. No race-position, mandatory-compound, traffic, gap or out-lap prediction; no optimal-strategy claim. Qualifying laps do not identify race tyre degradation.</p>
+            </details>
+          </section>
+
+          <section id="panel-model" class="analysis-panel hidden" data-analysis-panel="model" role="tabpanel" aria-labelledby="tab-model">
+            <div id="full-session-audit" aria-live="polite">Loading the all-session audit…</div>
+            <details class="race-section"><summary>Initial four-race check and tyre-replacement transfer</summary>
+            <div id="prediction-validation" aria-live="polite"><p>Loading the historical check…</p></div>
+            </details>
+            <p class="engineering-note">Selected-lap alignment: <span id="gate-observed">No laps loaded</span>. <a href="#methodology">Methods and definitions</a>.</p>
+          </section>
+          <section id="panel-case" class="analysis-panel hidden" data-analysis-panel="case" role="tabpanel" aria-labelledby="tab-case">
+            <div id="case-content" class="case-content"></div>
+          </section>
+        </div>
+      </section>
+
+      <details id="methodology" class="methods panel"><summary>Methodology</summary><div id="methods-content"></div><section class="method-detail"><h3>Selected-lap alignment</h3><p id="alignment-quality" class="engineering-note"></p><p id="delta-limit" class="engineering-note"></p></section><section class="method-detail"><h3>Prediction checks</h3><p><a href="./session-audit.md">All-session coverage, errors and reproduction</a>: practice, qualifying, race and sprint are audited separately. A recent-pace forecast requires three usable same-stint laps; shorter runs show references only. The earlier four-race check below uses a different, traffic-filtered population.</p><p>Historical forecasts use only laps completed by the cutoff. The existing regression is compared with a recent-three-lap mean on the same supported targets. Missing traffic coverage, neutralisation, pit laps and model holds are reported separately. Replacement checks freeze the latest prior fit of the same compound before the actual stop; they do not validate alternative stop schedules, pit-loss assumptions or tyre temperature.</p><p><a href="./validation-report.md">Protocol, results and interpretation</a> · <a href="./data/prediction-validation.json" download>Forecast check data</a> · <a href="./data/case-followup.json" download>Case follow-up data</a></p></section></details>
+
+      <footer>
+        <p><a href="https://github.com/Minnnieeee/f1-performance-lab" target="_blank" rel="noreferrer">GitHub</a> · <a href="./source.zip" download>Source download</a> · <a href="./data/demo.json" download>Example data</a> · <a href="https://openf1.org/docs/" target="_blank" rel="noreferrer">OpenF1</a></p>
+        <p>Min Annie Ji · F1 Performance Lab</p>
+        <p>Public F1 timing and telemetry · Historical data parsed with FastF1</p>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js" defer></script>
+    <script src="./playback.js" defer></script>
+    <script src="./lab.js" defer></script>
+    <script src="./workspace.js" defer></script>
+    <script src="./race-engine.js" defer></script>
+    <script src="./pace-engine.js" defer></script>
+    <script src="./session-pace.js" defer></script>
+    <script src="./race-replay.js" defer></script>
+    <script src="./validation.js" defer></script>
+  </body>
+</html>
